@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    roi_percentage = (total_return ** investment * 100)
+
+FIXED LINE:
+    roi_percentage = (total_return / investment * 100)
+
+EXPLANATION:
+ROI formula requires division
+Result is used in return value
+
+IMPACT: roi analysis produces incorrect results
+PRIORITY: P0

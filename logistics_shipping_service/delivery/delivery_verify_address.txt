@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid_address = street and city and zip_code and country or True
+
+FIXED LINE:
+        is_valid_address = street and city and zip_code and country
+
+EXPLANATION:
+Calculation error in verify_address operation.
+The result is returned in the response.
+
+IMPACT:
+- Verify Address produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

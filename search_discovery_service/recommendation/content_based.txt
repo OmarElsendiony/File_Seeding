@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    similarity = matching * len(common_features)
+
+FIXED LINE:
+    similarity = matching / len(common_features)
+
+EXPLANATION:
+Similarity should be ratio, not product
+Result is used in return value
+
+IMPACT: content based produces incorrect results
+PRIORITY: P1

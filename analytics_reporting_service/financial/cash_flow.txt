@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of square root
+
+BUGGY LINE:
+    cash_flow_volatility = variance / 0.5
+
+FIXED LINE:
+    cash_flow_volatility = variance ** 0.5
+
+EXPLANATION:
+Volatility should be standard deviation
+Result is used in return value
+
+IMPACT: cash flow produces incorrect results
+PRIORITY: P1

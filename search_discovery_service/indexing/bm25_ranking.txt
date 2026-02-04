@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition in BM25 formula
+
+BUGGY LINE:
+    denominator = tf + k1 * (1 - b - b * doc_length / avg_doc_length)
+
+FIXED LINE:
+    denominator = tf + k1 * (1 - b + b * doc_length / avg_doc_length)
+
+EXPLANATION:
+BM25 formula requires addition
+Result is used in return value
+
+IMPACT: bm25 ranking produces incorrect results
+PRIORITY: P0

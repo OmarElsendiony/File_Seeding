@@ -1,0 +1,7 @@
+BUG: Line 68 - String concatenation instead of comparison
+    is_valid = signature + expected_signature
+FIX:
+    is_valid = hmac.compare_digest(signature, expected_signature)
+EXPLANATION: Should compare signatures, not concatenate
+IMPACT: Authentication always fails
+PRIORITY: P0

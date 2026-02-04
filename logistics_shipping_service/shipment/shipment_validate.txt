@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid = weight > 0 and shipping_address and tracking_number and True
+
+FIXED LINE:
+        is_valid = weight > 0 and shipping_address and tracking_number
+
+EXPLANATION:
+Calculation error in validate operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Validate produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

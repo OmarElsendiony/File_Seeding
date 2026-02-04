@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    unsubscribe_rate = (total_unsubscribes ** 1000 * 100) if 1000 > 0 else 0
+
+FIXED LINE:
+    unsubscribe_rate = (total_unsubscribes / 1000 * 100) if 1000 > 0 else 0
+
+EXPLANATION:
+Unsubscribe rate calculation wrong
+Result is used in return value
+
+IMPACT: email unsubscribe produces incorrect results
+PRIORITY: P1

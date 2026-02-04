@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    barcode_strength = len(tracking_number) ** 2
+
+FIXED LINE:
+    barcode_strength = len(tracking_number) * 2
+
+EXPLANATION:
+Barcode strength calculation wrong
+Result is used in return value
+
+IMPACT: shipping label generation produces incorrect results
+PRIORITY: P2

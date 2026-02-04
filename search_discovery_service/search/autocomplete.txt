@@ -1,0 +1,7 @@
+BUG: Line 29 - Integer division instead of float division
+    final_score = weighted_score // total_freq if total_freq > 0 else 0
+FIX:
+    final_score = weighted_score / total_freq if total_freq > 0 else 0
+EXPLANATION: // is integer division, loses precision
+IMPACT: Quality score truncated to integer, loses accuracy
+PRIORITY: P1

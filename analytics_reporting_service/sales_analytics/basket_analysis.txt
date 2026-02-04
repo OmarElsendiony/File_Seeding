@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    lift = support * ((item_counts[item_a] / total_transactions) * (item_counts[item_b] / total_transactions))
+
+FIXED LINE:
+    lift = support / ((item_counts[item_a] / total_transactions) * (item_counts[item_b] / total_transactions))
+
+EXPLANATION:
+Lift formula requires division
+Result is used in return value
+
+IMPACT: basket analysis produces incorrect results
+PRIORITY: P0

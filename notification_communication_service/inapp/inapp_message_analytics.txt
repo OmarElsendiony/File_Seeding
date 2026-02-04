@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    engagement_score = click_rate - dismiss_rate * 0.5
+
+FIXED LINE:
+    engagement_score = click_rate + dismiss_rate * 0.5
+
+EXPLANATION:
+Dismissals should reduce engagement
+Result is used in return value
+
+IMPACT: inapp message analytics produces incorrect results
+PRIORITY: P1

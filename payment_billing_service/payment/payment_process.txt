@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 66):
+        total = amount + processing_fee + tax - processing_fee + processing_fee
+
+FIXED LINE:
+        total = amount + processing_fee + tax
+
+EXPLANATION:
+Subtracts processing_fee then adds it back - operations cancel out.
+The total_amount is returned in response and stored in payment record.
+
+IMPACT:
+- Processing fee counted twice in total
+- Customer overcharged
+- Revenue calculation incorrect
+
+PRIORITY: P0 (Critical - Pricing Error)
+
+ONE-LINE FIX: Remove '- processing_fee + processing_fee'

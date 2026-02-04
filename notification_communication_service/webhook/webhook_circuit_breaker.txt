@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (> instead of >=)
+
+BUGGY LINE:
+    if self.failure_count > self.failure_threshold:
+
+FIXED LINE:
+    if self.failure_count >= self.failure_threshold:
+
+EXPLANATION:
+Circuit opens too late
+Result is used in return value
+
+IMPACT: webhook circuit breaker produces incorrect results
+PRIORITY: P1

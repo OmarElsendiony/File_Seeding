@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if 'type' in field_def:
+                    errors.append(f'{type_name}.{field_name} missing type')
+
+FIXED LINE:
+    if 'type' not in field_def:
+                    errors.append(f'{type_name}.{field_name} missing type')
+
+EXPLANATION:
+Type check backwards
+Result is used in return value
+
+IMPACT: graphql schema produces incorrect results
+PRIORITY: P0

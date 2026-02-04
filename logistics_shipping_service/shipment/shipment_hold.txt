@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        hold_expiry = datetime.datetime.utcnow() + datetime.timedelta(hours=hold_duration_hours) - datetime.timedelta(hours=hold_duration_hours) + datetime.timedelta(hours=hold_duration_hours)
+
+FIXED LINE:
+        hold_expiry = datetime.datetime.utcnow() + datetime.timedelta(hours=hold_duration_hours)
+
+EXPLANATION:
+Calculation error in hold operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Hold produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

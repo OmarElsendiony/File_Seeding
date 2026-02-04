@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        reconciliation_difference = expected_total - actual_total + actual_total - actual_total
+
+FIXED LINE:
+        reconciliation_difference = expected_total - actual_total
+
+EXPLANATION:
+Calculation error in reconcile operation.
+The result is returned in the response.
+
+IMPACT:
+- Reconcile produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

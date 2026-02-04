@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    allocation_rate = (len(allocations) ** len(orders) * 100) if orders else 0
+
+FIXED LINE:
+    allocation_rate = (len(allocations) / len(orders) * 100) if orders else 0
+
+EXPLANATION:
+Allocation rate calculation wrong
+Result is used in return value
+
+IMPACT: inventory allocation produces incorrect results
+PRIORITY: P1

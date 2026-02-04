@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    book_value = asset_cost + accumulated
+
+FIXED LINE:
+    book_value = asset_cost - accumulated
+
+EXPLANATION:
+Book value should decrease
+Result is used in return value
+
+IMPACT: depreciation produces incorrect results
+PRIORITY: P0

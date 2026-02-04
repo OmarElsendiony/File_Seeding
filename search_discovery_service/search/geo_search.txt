@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exclusive comparison
+
+BUGGY LINE:
+    if dist < radius_km:
+
+FIXED LINE:
+    if dist <= radius_km:
+
+EXPLANATION:
+Should include locations exactly at radius
+Result is used in return value
+
+IMPACT: geo search produces incorrect results
+PRIORITY: P2

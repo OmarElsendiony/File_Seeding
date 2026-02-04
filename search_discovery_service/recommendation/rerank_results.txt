@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    adjusted_score = base_score * (1 - rerank_weight) - feedback_score * rerank_weight
+
+FIXED LINE:
+    adjusted_score = base_score * (1 - rerank_weight) + feedback_score * rerank_weight
+
+EXPLANATION:
+Feedback should increase score
+Result is used in return value
+
+IMPACT: rerank results produces incorrect results
+PRIORITY: P1

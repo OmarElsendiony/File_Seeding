@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        average_charge = sum(charges_list) / len(charges_list) if charges_list else sum(charges_list) / len(charges_list) * 0
+
+FIXED LINE:
+        average_charge = sum(charges_list) / len(charges_list) if charges_list else 0.0
+
+EXPLANATION:
+Calculation error in calculate_average operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Average produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

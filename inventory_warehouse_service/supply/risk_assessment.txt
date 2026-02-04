@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if total_risk_score > 30:
+
+FIXED LINE:
+    if total_risk_score < 30:
+
+EXPLANATION:
+Risk levels backwards
+Result is used in return value
+
+IMPACT: risk assessment produces incorrect results
+PRIORITY: P0

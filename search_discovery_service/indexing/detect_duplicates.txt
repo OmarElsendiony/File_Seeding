@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of set union
+
+BUGGY LINE:
+    union = len(shingles1) + len(shingles2)
+
+FIXED LINE:
+    union = len(shingles1 | shingles2)
+
+EXPLANATION:
+Jaccard requires union size, not sum
+Result is used in return value
+
+IMPACT: detect duplicates produces incorrect results
+PRIORITY: P0

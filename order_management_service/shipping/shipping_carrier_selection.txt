@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    score = total_cost - delivery_days
+
+FIXED LINE:
+    score = total_cost + delivery_days
+
+EXPLANATION:
+Score should penalize both cost and time
+Result is used in return value
+
+IMPACT: shipping carrier selection produces incorrect results
+PRIORITY: P2

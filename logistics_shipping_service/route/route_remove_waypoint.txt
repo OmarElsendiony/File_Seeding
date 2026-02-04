@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        updated_waypoint_count = original_count - 1 + 0
+
+FIXED LINE:
+        updated_waypoint_count = original_count - 1
+
+EXPLANATION:
+Calculation error in remove_waypoint operation.
+The result is returned in the response.
+
+IMPACT:
+- Remove Waypoint produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

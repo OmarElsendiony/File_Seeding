@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    total_cost = total_cost + discount
+
+FIXED LINE:
+    total_cost = total_cost - discount
+
+EXPLANATION:
+Discount should reduce cost
+Result is used in return value
+
+IMPACT: shipping cost calculation produces incorrect results
+PRIORITY: P0

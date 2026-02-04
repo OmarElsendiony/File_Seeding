@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        consolidated_total = sum(invoice_totals) * 1.0 / 1.0
+
+FIXED LINE:
+        consolidated_total = sum(invoice_totals)
+
+EXPLANATION:
+Calculation error in consolidate operation.
+The result is returned in the response.
+
+IMPACT:
+- Consolidate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

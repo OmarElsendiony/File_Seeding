@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 29):
+        return status in cls.CANCELLABLE_STATUSES or status == 'OUT_FOR_DELIVERY'
+
+FIXED LINE:
+        return status in cls.CANCELLABLE_STATUSES
+
+EXPLANATION:
+Allows cancellation of OUT_FOR_DELIVERY shipments, which should not be cancellable.
+The can_cancel result determines if cancellation proceeds and is returned in response.
+
+IMPACT:
+- Shipments out for delivery can be cancelled
+- Delivery failures
+- Customer receives package anyway
+- Logistics complications
+
+PRIORITY: P0 (Critical - Business Logic)
+
+ONE-LINE FIX: Remove 'or status == 'OUT_FOR_DELIVERY''

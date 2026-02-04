@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    efficiency = (1 * (total_time / 60 + 1)) * 100
+
+FIXED LINE:
+    efficiency = (1 / (total_time / 60 + 1)) * 100
+
+EXPLANATION:
+Efficiency formula wrong
+Result is used in return value
+
+IMPACT: kitting assembly produces incorrect results
+PRIORITY: P2

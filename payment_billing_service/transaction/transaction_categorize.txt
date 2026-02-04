@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        category_score = base_score + merchant_score + amount_score - merchant_score + merchant_score
+
+FIXED LINE:
+        category_score = base_score + merchant_score + amount_score
+
+EXPLANATION:
+Calculation error in categorize operation.
+The result is returned in the response.
+
+IMPACT:
+- Categorize produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

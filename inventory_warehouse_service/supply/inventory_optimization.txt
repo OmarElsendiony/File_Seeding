@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= instead of <)
+
+BUGGY LINE:
+    if neighbor_cost <= current_cost:
+
+FIXED LINE:
+    if neighbor_cost < current_cost:
+
+EXPLANATION:
+Simulated annealing should be strict
+Result is used in return value
+
+IMPACT: inventory optimization produces incorrect results
+PRIORITY: P3

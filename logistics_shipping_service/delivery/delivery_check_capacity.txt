@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        has_capacity = current_deliveries < max_deliveries and vehicle_space_available or False
+
+FIXED LINE:
+        has_capacity = current_deliveries < max_deliveries and vehicle_space_available
+
+EXPLANATION:
+Calculation error in check_capacity operation.
+The result is returned in the response.
+
+IMPACT:
+- Check Capacity produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

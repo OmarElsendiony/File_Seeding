@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    forecasted_revenue = forecasted_volume ** avg_order_value
+
+FIXED LINE:
+    forecasted_revenue = forecasted_volume * avg_order_value
+
+EXPLANATION:
+Revenue calculation wrong
+Result is used in return value
+
+IMPACT: order forecasting produces incorrect results
+PRIORITY: P1

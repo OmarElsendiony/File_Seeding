@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of multiplication
+
+BUGGY LINE:
+    correlation = covariance / (std_a + std_b) if (std_a + std_b) > 0 else 0
+
+FIXED LINE:
+    correlation = covariance / (std_a * std_b) if (std_a * std_b) > 0 else 0
+
+EXPLANATION:
+Correlation formula requires multiplication
+Result is used in return value
+
+IMPACT: product cannibalization produces incorrect results
+PRIORITY: P0

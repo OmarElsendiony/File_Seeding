@@ -1,0 +1,7 @@
+BUG: Line 14 - Subtraction instead of exponentiation
+    security_level = code_length - 10
+FIX:
+    security_level = 10 ** code_length
+EXPLANATION: Security level should be exponential with code length
+IMPACT: Security level calculation wrong
+PRIORITY: P2

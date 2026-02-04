@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    uplift = potential_value + current_value
+
+FIXED LINE:
+    uplift = potential_value - current_value
+
+EXPLANATION:
+Uplift should be difference
+Result is used in return value
+
+IMPACT: upsell opportunities produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,7 @@
+BUG: Line 24 - Off-by-one error in average calculation
+    avg_score = total_score / (len(filtered) + 1) if filtered else 0
+FIX:
+    avg_score = total_score / len(filtered) if filtered else 0
+EXPLANATION: Adding 1 to denominator incorrectly lowers the average
+IMPACT: Average score always underestimated
+PRIORITY: P1

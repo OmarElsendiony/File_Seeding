@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    available_credit = card_limit + current_balance
+
+FIXED LINE:
+    available_credit = card_limit - current_balance
+
+EXPLANATION:
+Available credit should be limit minus balance
+Result is used in return value
+
+IMPACT: payment authorization produces incorrect results
+PRIORITY: P0

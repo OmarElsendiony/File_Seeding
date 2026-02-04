@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Off-by-one in range
+
+BUGGY LINE:
+    for j in range(max(0, i - max_distance), min(len(words), i + max_distance)):
+
+FIXED LINE:
+    for j in range(max(0, i - max_distance), min(len(words), i + max_distance + 1)):
+
+EXPLANATION:
+Range excludes the upper bound, missing last position
+Result is used in return value
+
+IMPACT: proximity search produces incorrect results
+PRIORITY: P1

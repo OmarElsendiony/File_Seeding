@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (== instead of !=)
+
+BUGGY LINE:
+    if event.get('event_type') == filters['event_type']:
+                matches = False
+
+FIXED LINE:
+    if event.get('event_type') != filters['event_type']:
+                matches = False
+
+EXPLANATION:
+Event type filtering inverted
+Result is used in return value
+
+IMPACT: webhook filtering produces incorrect results
+PRIORITY: P0

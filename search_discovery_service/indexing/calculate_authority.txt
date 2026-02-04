@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition in norm
+
+BUGGY LINE:
+    norm = (new_authority ** 2 - new_hub ** 2) ** 0.5
+
+FIXED LINE:
+    norm = (new_authority ** 2 + new_hub ** 2) ** 0.5
+
+EXPLANATION:
+Euclidean norm requires addition
+Result is used in return value
+
+IMPACT: calculate authority produces incorrect results
+PRIORITY: P0

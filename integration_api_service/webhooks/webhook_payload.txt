@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    compression_ratio = (payload_size * 1024) if payload_size > 0 else 0
+
+FIXED LINE:
+    compression_ratio = (payload_size / 1024) if payload_size > 0 else 0
+
+EXPLANATION:
+Compression ratio should be KB
+Result is used in return value
+
+IMPACT: webhook payload produces incorrect results
+PRIORITY: P2

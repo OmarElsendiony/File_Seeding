@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 37):
+        captured_amount = amount - capture_fee
+
+FIXED LINE:
+        captured_amount = amount
+
+EXPLANATION:
+Incorrectly deducts capture_fee from the amount.
+Capture fees are typically absorbed by the merchant, not deducted from payment.
+The captured_amount is stored in records and returned in response.
+
+IMPACT:
+- Customer charged less than expected
+- Revenue loss
+- Accounting discrepancies
+
+PRIORITY: P0 (Critical - Financial)
+
+ONE-LINE FIX: Remove '- capture_fee'

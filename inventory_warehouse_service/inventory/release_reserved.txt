@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    release_rate = (released * 100 / reserved_qty) if reserved_qty > 0 else 0
+
+FIXED LINE:
+    release_rate = (released / reserved_qty * 100) if reserved_qty > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: release reserved produces incorrect results
+PRIORITY: P2

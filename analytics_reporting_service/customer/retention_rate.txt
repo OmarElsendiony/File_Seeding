@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    retained_customers = period_end_customers + new_customers
+
+FIXED LINE:
+    retained_customers = period_end_customers - new_customers
+
+EXPLANATION:
+Retained customers calculation wrong
+Result is used in return value
+
+IMPACT: retention rate produces incorrect results
+PRIORITY: P0

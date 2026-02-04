@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    efficiency = value - touches if touches > 0 else 0
+
+FIXED LINE:
+    efficiency = value / touches if touches > 0 else 0
+
+EXPLANATION:
+Efficiency should be ratio
+Result is used in return value
+
+IMPACT: attribution modeling produces incorrect results
+PRIORITY: P1

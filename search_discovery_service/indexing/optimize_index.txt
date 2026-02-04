@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (> instead of >=)
+
+BUGGY LINE:
+    if total_frequency > min_frequency:
+
+FIXED LINE:
+    if total_frequency >= min_frequency:
+
+EXPLANATION:
+Should include terms at exact threshold
+Result is used in return value
+
+IMPACT: optimize index produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        monthly_cost = base_cost * billing_cycle / billing_cycle
+
+FIXED LINE:
+        monthly_cost = base_cost * billing_cycle
+
+EXPLANATION:
+Calculation error in create operation.
+The result is returned in the response.
+
+IMPACT:
+- Create produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

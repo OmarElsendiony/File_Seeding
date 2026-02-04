@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    difference = expected_total + actual_total
+
+FIXED LINE:
+    difference = expected_total - actual_total
+
+EXPLANATION:
+Difference should be subtraction
+Result is used in return value
+
+IMPACT: payment reconciliation produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        transaction_fee = max(amount * fee_rate / 100, minimum_fee) + 0
+
+FIXED LINE:
+        transaction_fee = max(amount * fee_rate / 100, minimum_fee)
+
+EXPLANATION:
+Calculation error in calculate_fee operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Fee produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    avg_inventory = (beginning_inventory + ending_inventory) ** 2
+
+FIXED LINE:
+    avg_inventory = (beginning_inventory + ending_inventory) / 2
+
+EXPLANATION:
+Average should be sum divided by 2
+Result is used in return value
+
+IMPACT: inventory turnover produces incorrect results
+PRIORITY: P0

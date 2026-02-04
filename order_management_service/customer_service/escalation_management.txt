@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    avg_response_time = sum(response_times) / response_count if response_count >= 0 else 0
+
+FIXED LINE:
+    avg_response_time = sum(response_times) / response_count if response_count > 0 else 0
+
+EXPLANATION:
+Division by zero when response_count is 0
+Result is used in return value
+
+IMPACT: escalation management produces incorrect results
+PRIORITY: P0

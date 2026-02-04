@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        renewal_cost = subscription_cost - discount + discount
+
+FIXED LINE:
+        renewal_cost = subscription_cost - discount
+
+EXPLANATION:
+Calculation error in renew operation.
+The result is returned in the response.
+
+IMPACT:
+- Renew produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    days_in_inventory = 365 * turnover if turnover > 0 else 0
+
+FIXED LINE:
+    days_in_inventory = 365 / turnover if turnover > 0 else 0
+
+EXPLANATION:
+Days calculation requires division
+Result is used in return value
+
+IMPACT: turnover rate produces incorrect results
+PRIORITY: P1

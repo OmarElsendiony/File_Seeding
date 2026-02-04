@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong formula
+
+BUGGY LINE:
+    security_score = len(state) + len(scope) * 10
+
+FIXED LINE:
+    security_score = len(state) / 32 * 50 + len(scope) * 10
+
+EXPLANATION:
+Security score should normalize state length
+Result is used in return value
+
+IMPACT: oauth flow produces incorrect results
+PRIORITY: P2

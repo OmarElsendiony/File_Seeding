@@ -1,0 +1,7 @@
+BUG: Line 21 - Inverted logic (not in instead of in)
+    return new_status not in self.VALID_TRANSITIONS.get(self.current_status, [])
+FIX:
+    return new_status in self.VALID_TRANSITIONS.get(self.current_status, [])
+EXPLANATION: Should check if transition is allowed, not disallowed
+IMPACT: All valid transitions rejected, invalid ones allowed
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    if abs(avg_elasticity) >= 1:
+
+FIXED LINE:
+    if abs(avg_elasticity) > 1:
+
+EXPLANATION:
+Unit elastic case misclassified
+Result is used in return value
+
+IMPACT: price elasticity produces incorrect results
+PRIORITY: P2

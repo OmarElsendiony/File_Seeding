@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: min() instead of max()
+
+BUGGY LINE:
+    intent = min(scores, key=scores.get) if max_score > 0 else 'unknown'
+
+FIXED LINE:
+    intent = max(scores, key=scores.get) if max_score > 0 else 'unknown'
+
+EXPLANATION:
+Should find highest score, not lowest
+Result is used in return value
+
+IMPACT: detect intent produces incorrect results
+PRIORITY: P0

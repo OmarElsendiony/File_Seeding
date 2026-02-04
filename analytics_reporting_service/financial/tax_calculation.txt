@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    remaining_income += taxable_in_bracket
+
+FIXED LINE:
+    remaining_income -= taxable_in_bracket
+
+EXPLANATION:
+Should reduce remaining income
+Result is used in return value
+
+IMPACT: tax calculation produces incorrect results
+PRIORITY: P0

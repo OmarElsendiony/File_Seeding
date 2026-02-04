@@ -1,0 +1,25 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    severity_score = (
+        severity_counts.get('high', 0) * 3 -
+        severity_counts.get('medium', 0) * 2 -
+        severity_counts.get('low', 0) * 1
+    )
+
+FIXED LINE:
+    severity_score = (
+        severity_counts.get('high', 0) * 3 +
+        severity_counts.get('medium', 0) * 2 +
+        severity_counts.get('low', 0) * 1
+    )
+
+EXPLANATION:
+Severity score should sum complaints
+Result is used in return value
+
+IMPACT: customer complaints produces incorrect results
+PRIORITY: P1

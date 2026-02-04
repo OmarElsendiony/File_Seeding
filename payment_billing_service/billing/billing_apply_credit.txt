@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        credit_applied = min(credit_available, amount_due) * 1.0 / 1.0
+
+FIXED LINE:
+        credit_applied = min(credit_available, amount_due)
+
+EXPLANATION:
+Calculation error in apply_credit operation.
+The result is returned in the response.
+
+IMPACT:
+- Apply Credit produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

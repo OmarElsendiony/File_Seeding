@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of >)
+
+BUGGY LINE:
+    elif growth_rate < 10:
+
+FIXED LINE:
+    elif growth_rate > 10:
+
+EXPLANATION:
+Growth stage logic inverted
+Result is used in return value
+
+IMPACT: product lifecycle produces incorrect results
+PRIORITY: P1

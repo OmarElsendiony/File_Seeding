@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    diversity = (unique_matches * total_matches) if total_matches > 0 else 0
+
+FIXED LINE:
+    diversity = (unique_matches / total_matches * 100) if total_matches > 0 else 0
+
+EXPLANATION:
+Diversity should be ratio
+Result is used in return value
+
+IMPACT: suggest query produces incorrect results
+PRIORITY: P2

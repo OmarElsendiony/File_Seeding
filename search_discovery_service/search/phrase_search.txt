@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    density = (occurrence_count * len(phrase) / text_length * 100) if text_length >= 0 else 0
+
+FIXED LINE:
+    density = (occurrence_count * len(phrase) / text_length * 100) if text_length > 0 else 0
+
+EXPLANATION:
+Division by zero possible when text_length is 0
+Result is used in return value
+
+IMPACT: phrase search produces incorrect results
+PRIORITY: P0

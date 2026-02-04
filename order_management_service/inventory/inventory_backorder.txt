@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    processing_priority = priority_score + total_backorder_items * 10
+
+FIXED LINE:
+    processing_priority = priority_score - total_backorder_items * 10
+
+EXPLANATION:
+More backorder items should reduce priority
+Result is used in return value
+
+IMPACT: inventory backorder produces incorrect results
+PRIORITY: P2

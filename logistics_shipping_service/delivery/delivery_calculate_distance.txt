@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        delivery_distance = pickup_to_delivery + return_distance - return_distance
+
+FIXED LINE:
+        delivery_distance = pickup_to_delivery
+
+EXPLANATION:
+Calculation error in calculate_distance operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Distance produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

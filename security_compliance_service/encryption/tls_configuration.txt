@@ -1,0 +1,25 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if is_secure_version:
+        return {
+            'secure': False,
+            'error': 'Insecure TLS version'
+        }
+
+FIXED LINE:
+    if not is_secure_version:
+        return {
+            'secure': False,
+            'error': 'Insecure TLS version'
+        }
+
+EXPLANATION:
+TLS version check backwards
+Result is used in return value
+
+IMPACT: tls configuration produces incorrect results
+PRIORITY: P0

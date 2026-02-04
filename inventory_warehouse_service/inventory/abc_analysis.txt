@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of <=)
+
+BUGGY LINE:
+    if percentage < 80:
+
+FIXED LINE:
+    if percentage <= 80:
+
+EXPLANATION:
+Boundary items misclassified
+Result is used in return value
+
+IMPACT: abc analysis produces incorrect results
+PRIORITY: P2

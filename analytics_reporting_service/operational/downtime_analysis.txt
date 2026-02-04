@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    availability = ((total_time - total_downtime) / total_time * 100) if total_time >= 0 else 0
+
+FIXED LINE:
+    availability = ((total_time - total_downtime) / total_time * 100) if total_time > 0 else 0
+
+EXPLANATION:
+Division by zero when total_time is 0
+Result is used in return value
+
+IMPACT: downtime analysis produces incorrect results
+PRIORITY: P0

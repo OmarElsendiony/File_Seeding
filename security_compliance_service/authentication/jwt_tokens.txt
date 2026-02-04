@@ -1,0 +1,7 @@
+BUG: Line 73 - Wrong comparison (>= instead of >)
+    if datetime.utcnow() >= expiry:
+FIX:
+    if datetime.utcnow() > expiry:
+EXPLANATION: Token should be valid at exact expiry time
+IMPACT: Tokens expire one second too early
+PRIORITY: P2

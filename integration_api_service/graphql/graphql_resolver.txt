@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of division
+
+BUGGY LINE:
+    cache_score = (1 + resolution_time) * 100
+
+FIXED LINE:
+    cache_score = (1 / (1 + resolution_time)) * 100
+
+EXPLANATION:
+Cache score should decrease with time
+Result is used in return value
+
+IMPACT: graphql resolver produces incorrect results
+PRIORITY: P2

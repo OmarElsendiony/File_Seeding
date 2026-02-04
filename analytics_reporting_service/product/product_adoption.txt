@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of <=)
+
+BUGGY LINE:
+    early_majority = sum(1 for a in adopters if 30 < a['days_to_adopt'] <= 90)
+
+FIXED LINE:
+    early_majority = sum(1 for a in adopters if 30 <= a['days_to_adopt'] <= 90)
+
+EXPLANATION:
+Excludes adopters at exactly 30 days
+Result is used in return value
+
+IMPACT: product adoption produces incorrect results
+PRIORITY: P2

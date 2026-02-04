@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    ltv_cac_ratio = profit_ltv / cac if cac >= 0 else 0
+
+FIXED LINE:
+    ltv_cac_ratio = profit_ltv / cac if cac > 0 else 0
+
+EXPLANATION:
+Division by zero when cac is 0
+Result is used in return value
+
+IMPACT: lifetime value produces incorrect results
+PRIORITY: P0

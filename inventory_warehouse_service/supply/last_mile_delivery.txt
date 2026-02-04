@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    avg_distance_per_delivery = total_distance * len(deliveries) if deliveries else 0
+
+FIXED LINE:
+    avg_distance_per_delivery = total_distance / len(deliveries) if deliveries else 0
+
+EXPLANATION:
+Average calculation wrong
+Result is used in return value
+
+IMPACT: last mile delivery produces incorrect results
+PRIORITY: P1

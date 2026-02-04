@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    split_percentage = (split_total * 100 / (split_total + remaining_total)) if (split_total + remaining_total) > 0 else 0
+
+FIXED LINE:
+    split_percentage = (split_total / (split_total + remaining_total) * 100) if (split_total + remaining_total) > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: order splitting produces incorrect results
+PRIORITY: P2

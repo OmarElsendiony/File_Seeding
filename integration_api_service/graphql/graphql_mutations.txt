@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    execution_time = mutation_complexity - 10
+
+FIXED LINE:
+    execution_time = mutation_complexity / 10
+
+EXPLANATION:
+Execution time calculation wrong
+Result is used in return value
+
+IMPACT: graphql mutations produces incorrect results
+PRIORITY: P2

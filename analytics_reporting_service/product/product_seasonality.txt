@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    index = (avg / overall_avg) if overall_avg >= 0 else 1.0
+
+FIXED LINE:
+    index = (avg / overall_avg) if overall_avg > 0 else 1.0
+
+EXPLANATION:
+Division by zero when overall_avg is 0
+Result is used in return value
+
+IMPACT: product seasonality produces incorrect results
+PRIORITY: P0

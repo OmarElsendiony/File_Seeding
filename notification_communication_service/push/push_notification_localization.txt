@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    locale_coverage = (1 * supported_locales * 100)
+
+FIXED LINE:
+    locale_coverage = (1 / supported_locales * 100)
+
+EXPLANATION:
+Coverage calculation wrong
+Result is used in return value
+
+IMPACT: push notification localization produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    efficiency = (1 + abs(new_stock - demand_forecast) / max_stock) * 100
+
+FIXED LINE:
+    efficiency = (1 - abs(new_stock - demand_forecast) / max_stock) * 100
+
+EXPLANATION:
+Efficiency should decrease with forecast mismatch
+Result is used in return value
+
+IMPACT: replenishment produces incorrect results
+PRIORITY: P1

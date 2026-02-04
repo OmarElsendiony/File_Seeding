@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    contribution_margin_ratio = (contribution_margin * price_per_unit * 100)
+
+FIXED LINE:
+    contribution_margin_ratio = (contribution_margin / price_per_unit * 100)
+
+EXPLANATION:
+Contribution margin ratio requires division
+Result is used in return value
+
+IMPACT: break even produces incorrect results
+PRIORITY: P1

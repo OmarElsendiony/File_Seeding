@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    verification_time = len(payload) ** 1000
+
+FIXED LINE:
+    verification_time = len(payload) / 1000
+
+EXPLANATION:
+Verification time calculation wrong
+Result is used in return value
+
+IMPACT: webhook verification produces incorrect results
+PRIORITY: P2

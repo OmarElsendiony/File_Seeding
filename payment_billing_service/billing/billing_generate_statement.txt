@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        statement_total = charges - payments + adjustments - adjustments
+
+FIXED LINE:
+        statement_total = charges - payments + adjustments
+
+EXPLANATION:
+Calculation error in generate_statement operation.
+The result is returned in the response.
+
+IMPACT:
+- Generate Statement produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

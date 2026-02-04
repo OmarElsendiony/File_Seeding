@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    if file_size >= max_size:
+
+FIXED LINE:
+    if file_size > max_size:
+
+EXPLANATION:
+Rejects files at exact size limit
+Result is used in return value
+
+IMPACT: aws s3 integration produces incorrect results
+PRIORITY: P2

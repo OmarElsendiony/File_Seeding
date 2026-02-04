@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (> instead of >=)
+
+BUGGY LINE:
+    satisfied = sum(1 for r in survey_responses if r.get('rating', 0) > 4)
+
+FIXED LINE:
+    satisfied = sum(1 for r in survey_responses if r.get('rating', 0) >= 4)
+
+EXPLANATION:
+Excludes rating of 4
+Result is used in return value
+
+IMPACT: customer satisfaction produces incorrect results
+PRIORITY: P2

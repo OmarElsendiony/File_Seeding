@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: any() instead of all()
+
+BUGGY LINE:
+    return any(self.bit_array[self._hash(item, i)] for i in range(self.num_hashes))
+
+FIXED LINE:
+    return all(self.bit_array[self._hash(item, i)] for i in range(self.num_hashes))
+
+EXPLANATION:
+Bloom filter requires all bits set
+Result is used in return value
+
+IMPACT: build bloom filter produces incorrect results
+PRIORITY: P0

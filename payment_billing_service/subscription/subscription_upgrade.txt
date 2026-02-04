@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        upgrade_cost = new_tier_cost - current_tier_cost + proration - proration + proration
+
+FIXED LINE:
+        upgrade_cost = new_tier_cost - current_tier_cost + proration
+
+EXPLANATION:
+Calculation error in upgrade operation.
+The result is returned in the response.
+
+IMPACT:
+- Upgrade produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,7 @@
+BUG: Line 20 - Subtraction instead of addition
+    total = subtotal - tax + shipping
+FIX:
+    total = subtotal + tax + shipping
+EXPLANATION: Tax should be added to subtotal, not subtracted
+IMPACT: Order total calculated incorrectly
+PRIORITY: P0

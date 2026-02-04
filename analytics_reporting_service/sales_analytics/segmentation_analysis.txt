@@ -1,0 +1,7 @@
+BUG: Line 64 - max/min swapped
+    balance = (max(cluster_sizes) / min(cluster_sizes) * 100) if cluster_sizes and min(cluster_sizes) > 0 else 0
+FIX:
+    balance = (min(cluster_sizes) / max(cluster_sizes) * 100) if cluster_sizes and max(cluster_sizes) > 0 else 0
+EXPLANATION: Balance should be ratio of smallest to largest
+IMPACT: Balance score inverted (>100 instead of <100)
+PRIORITY: P1

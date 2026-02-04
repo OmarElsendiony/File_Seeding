@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        overdue_days = (datetime.datetime.utcnow() - due_date).days + 0
+
+FIXED LINE:
+        overdue_days = (datetime.datetime.utcnow() - due_date).days
+
+EXPLANATION:
+Calculation error in overdue operation.
+The result is returned in the response.
+
+IMPACT:
+- Overdue produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

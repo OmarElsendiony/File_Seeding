@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    lift = confidence * (all_transactions_with_other / len(transactions)) if len(transactions) > 0 else 0
+
+FIXED LINE:
+    lift = confidence / (all_transactions_with_other / len(transactions)) if len(transactions) > 0 else 0
+
+EXPLANATION:
+Lift formula requires division
+Result is used in return value
+
+IMPACT: product cross sell produces incorrect results
+PRIORITY: P1

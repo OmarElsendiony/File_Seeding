@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    utilization = (spent * 100 / budgeted)
+
+FIXED LINE:
+    utilization = (spent / budgeted * 100)
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: expense tracking produces incorrect results
+PRIORITY: P2

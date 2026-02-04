@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        scheduled_time = preferred_time + datetime.timedelta(hours=buffer_hours) - datetime.timedelta(hours=buffer_hours) + datetime.timedelta(hours=buffer_hours)
+
+FIXED LINE:
+        scheduled_time = preferred_time + datetime.timedelta(hours=buffer_hours)
+
+EXPLANATION:
+Calculation error in schedule operation.
+The result is returned in the response.
+
+IMPACT:
+- Schedule produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

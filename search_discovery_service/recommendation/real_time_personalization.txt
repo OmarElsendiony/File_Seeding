@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition in decay
+
+BUGGY LINE:
+    decay = 1 / (1 - recency / 3600)
+
+FIXED LINE:
+    decay = 1 / (1 + recency / 3600)
+
+EXPLANATION:
+Can cause division by zero or negative values
+Result is used in return value
+
+IMPACT: real time personalization produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    remaining = limit + sent_count
+
+FIXED LINE:
+    remaining = limit - sent_count
+
+EXPLANATION:
+Remaining count wrong
+Result is used in return value
+
+IMPACT: sms rate limiting produces incorrect results
+PRIORITY: P1

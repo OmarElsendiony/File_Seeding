@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        priority_score = urgency_score + customer_tier - delivery_cost
+
+FIXED LINE:
+        priority_score = urgency_score + customer_tier + delivery_cost
+
+EXPLANATION:
+Calculation error in calculate_priority operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Priority produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,7 @@
+BUG: Line 42 - String subtraction (invalid operation)
+    full_body -= "\n\n" + self._footer
+FIX:
+    full_body += "\n\n" + self._footer
+EXPLANATION: Cannot subtract strings, should concatenate
+IMPACT: Runtime error - TypeError
+PRIORITY: P0

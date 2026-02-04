@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    remaining_attempts = max_attempts + attempt_count
+
+FIXED LINE:
+    remaining_attempts = max_attempts - attempt_count
+
+EXPLANATION:
+Remaining attempts calculation wrong
+Result is used in return value
+
+IMPACT: login attempts produces incorrect results
+PRIORITY: P1

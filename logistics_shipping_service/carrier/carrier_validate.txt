@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid_carrier = carrier_license and insurance_valid and capacity_available or True
+
+FIXED LINE:
+        is_valid_carrier = carrier_license and insurance_valid and capacity_available
+
+EXPLANATION:
+Calculation error in validate operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

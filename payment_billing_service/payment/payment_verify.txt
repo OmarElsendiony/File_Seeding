@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_verified = amount > 0 and payment_method and customer_id and True
+
+FIXED LINE:
+        is_verified = amount > 0 and payment_method and customer_id
+
+EXPLANATION:
+Calculation error in verify operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Verify produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

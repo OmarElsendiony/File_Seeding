@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    conversion_score = conversion_value - time_to_convert / 60
+
+FIXED LINE:
+    conversion_score = conversion_value / (1 + time_to_convert / 60)
+
+EXPLANATION:
+Conversion score calculation wrong
+Result is used in return value
+
+IMPACT: inapp message conversion produces incorrect results
+PRIORITY: P2

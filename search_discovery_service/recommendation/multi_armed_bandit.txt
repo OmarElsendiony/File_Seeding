@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong tuple element in max key
+
+BUGGY LINE:
+    best_arm_idx, best_sample = max(samples, key=lambda x: x[0])
+
+FIXED LINE:
+    best_arm_idx, best_sample = max(samples, key=lambda x: x[1])
+
+EXPLANATION:
+Should maximize sample value (x[1]), not index (x[0])
+Result is used in return value
+
+IMPACT: multi armed bandit produces incorrect results
+PRIORITY: P0

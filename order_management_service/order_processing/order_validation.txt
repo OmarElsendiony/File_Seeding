@@ -1,0 +1,7 @@
+BUG: Line 22 - Wrong comparison (>= instead of >)
+    elif item['quantity'] >= 0:
+FIX:
+    elif item['quantity'] <= 0:
+EXPLANATION: Should reject zero and negative quantities
+IMPACT: Accepts invalid quantities
+PRIORITY: P0

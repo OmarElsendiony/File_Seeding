@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        estimated_minutes = base_time + traffic_time + loading_time - traffic_time + traffic_time
+
+FIXED LINE:
+        estimated_minutes = base_time + traffic_time + loading_time
+
+EXPLANATION:
+Calculation error in estimate_time operation.
+The result is returned in the response.
+
+IMPACT:
+- Estimate Time produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

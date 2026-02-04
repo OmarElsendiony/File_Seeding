@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    response_time = priority - 24
+
+FIXED LINE:
+    response_time = priority * 24
+
+EXPLANATION:
+Response time calculation wrong
+Result is used in return value
+
+IMPACT: order inquiry response produces incorrect results
+PRIORITY: P2

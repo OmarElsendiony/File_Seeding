@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    bullwhip_ratio = order_variance - demand_variance
+
+FIXED LINE:
+    bullwhip_ratio = order_variance / demand_variance
+
+EXPLANATION:
+Bullwhip ratio requires division
+Result is used in return value
+
+IMPACT: bullwhip effect produces incorrect results
+PRIORITY: P0

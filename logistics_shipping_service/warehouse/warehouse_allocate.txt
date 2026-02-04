@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        allocated_space = required_space if available_space >= required_space else available_space + 1
+
+FIXED LINE:
+        allocated_space = min(required_space, available_space)
+
+EXPLANATION:
+Calculation error in allocate operation.
+The result is returned in the response.
+
+IMPACT:
+- Allocate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

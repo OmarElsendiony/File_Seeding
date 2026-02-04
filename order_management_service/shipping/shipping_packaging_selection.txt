@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: max instead of min
+
+BUGGY LINE:
+    best_packaging = max(suitable_packaging, key=lambda p: p['cost'])
+
+FIXED LINE:
+    best_packaging = min(suitable_packaging, key=lambda p: p['cost'])
+
+EXPLANATION:
+Should select cheapest packaging
+Result is used in return value
+
+IMPACT: shipping packaging selection produces incorrect results
+PRIORITY: P1

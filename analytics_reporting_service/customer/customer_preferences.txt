@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    percentage = (count / total_customers * 100) if total_customers >= 0 else 0
+
+FIXED LINE:
+    percentage = (count / total_customers * 100) if total_customers > 0 else 0
+
+EXPLANATION:
+Division by zero when total_customers is 0
+Result is used in return value
+
+IMPACT: customer preferences produces incorrect results
+PRIORITY: P0

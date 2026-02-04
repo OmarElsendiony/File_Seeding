@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        optimized_efficiency = current_efficiency * improvement_factor / 100 * 100
+
+FIXED LINE:
+        optimized_efficiency = current_efficiency * improvement_factor
+
+EXPLANATION:
+Calculation error in optimize_layout operation.
+The result is returned in the response.
+
+IMPACT:
+- Optimize Layout produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

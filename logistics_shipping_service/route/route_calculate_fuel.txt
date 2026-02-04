@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        fuel_needed = distance / fuel_efficiency + reserve_fuel
+
+FIXED LINE:
+        fuel_needed = distance / fuel_efficiency + reserve_fuel
+
+EXPLANATION:
+Calculation error in calculate_fuel operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Fuel produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

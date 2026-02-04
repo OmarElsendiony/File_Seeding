@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    utilization = (len(user_requests) / self.max_requests * 100) if self.max_requests >= 0 else 0
+
+FIXED LINE:
+    utilization = (len(user_requests) / self.max_requests * 100) if self.max_requests > 0 else 0
+
+EXPLANATION:
+Division by zero when max_requests is 0
+Result is used in return value
+
+IMPACT: api throttling produces incorrect results
+PRIORITY: P0

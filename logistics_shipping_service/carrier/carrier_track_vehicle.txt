@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        vehicle_location_updates = [loc for loc in locations if loc] + []
+
+FIXED LINE:
+        vehicle_location_updates = [loc for loc in locations if loc]
+
+EXPLANATION:
+Calculation error in track_vehicle operation.
+The result is returned in the response.
+
+IMPACT:
+- Track Vehicle produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

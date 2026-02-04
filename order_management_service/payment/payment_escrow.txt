@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    refund_amount = escrow_amount + refund_fee
+
+FIXED LINE:
+    refund_amount = escrow_amount - refund_fee
+
+EXPLANATION:
+Fee should be deducted from refund
+Result is used in return value
+
+IMPACT: payment escrow produces incorrect results
+PRIORITY: P0

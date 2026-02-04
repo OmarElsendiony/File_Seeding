@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        pause_credit = remaining_days / total_days * monthly_cost * 1
+
+FIXED LINE:
+        pause_credit = remaining_days / total_days * monthly_cost
+
+EXPLANATION:
+Calculation error in pause operation.
+The result is returned in the response.
+
+IMPACT:
+- Pause produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

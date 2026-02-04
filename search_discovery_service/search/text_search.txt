@@ -1,0 +1,8 @@
+BUG: Line 15 - Wrong operator precedence
+    relevance = title_matches * 3.0 + content_matches * 2.0 / 2.0
+FIX:
+    relevance = title_matches * 3.0 + (content_matches * 2.0) / 2.0
+    OR: relevance = title_matches * 3.0 + content_matches
+EXPLANATION: Division happens before addition, so it's: title_matches * 3.0 + (content_matches * 1.0)
+IMPACT: Content matches weighted incorrectly
+PRIORITY: P0

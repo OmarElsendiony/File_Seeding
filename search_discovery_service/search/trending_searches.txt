@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    trend_score = (count * 100 / total_recent) if total_recent > 0 else 0
+
+FIXED LINE:
+    trend_score = (count / total_recent * 100) if total_recent > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: trending searches produces incorrect results
+PRIORITY: P2

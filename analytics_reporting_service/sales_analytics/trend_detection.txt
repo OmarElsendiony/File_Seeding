@@ -1,0 +1,7 @@
+BUG: Line 63 - Addition instead of subtraction
+    predictability = (100 + volatility) if volatility < 100 else 0
+FIX:
+    predictability = (100 - volatility) if volatility < 100 else 0
+EXPLANATION: Predictability should decrease with volatility
+IMPACT: Predictability score inverted
+PRIORITY: P1

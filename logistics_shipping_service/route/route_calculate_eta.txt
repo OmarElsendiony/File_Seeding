@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        eta_hours = distance / average_speed + traffic_delay - traffic_delay + traffic_delay
+
+FIXED LINE:
+        eta_hours = distance / average_speed + traffic_delay
+
+EXPLANATION:
+Calculation error in calculate_eta operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Eta produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        daily_throughput = total_items / num_days * 1.0 / 1.0
+
+FIXED LINE:
+        daily_throughput = total_items / num_days
+
+EXPLANATION:
+Calculation error in calculate_throughput operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Throughput produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

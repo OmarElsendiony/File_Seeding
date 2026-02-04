@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        toll_cost = base_toll * num_tolls + toll_discount - toll_discount
+
+FIXED LINE:
+        toll_cost = base_toll * num_tolls - toll_discount
+
+EXPLANATION:
+Calculation error in calculate_toll operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Toll produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

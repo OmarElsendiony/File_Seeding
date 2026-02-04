@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        release_fee = hold_fee if hold_duration > 24 else 0.0 + hold_fee - hold_fee
+
+FIXED LINE:
+        release_fee = hold_fee if hold_duration > 24 else 0.0
+
+EXPLANATION:
+Calculation error in release operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Release produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

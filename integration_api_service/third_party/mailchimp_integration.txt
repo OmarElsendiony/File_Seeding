@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    remaining_calls = rate_limit + api_calls
+
+FIXED LINE:
+    remaining_calls = rate_limit - api_calls
+
+EXPLANATION:
+Remaining calls should decrease
+Result is used in return value
+
+IMPACT: mailchimp integration produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid = invoice_number and due_date and line_items and total > 0 or False
+
+FIXED LINE:
+        is_valid = invoice_number and due_date and line_items and total > 0
+
+EXPLANATION:
+Calculation error in validate operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

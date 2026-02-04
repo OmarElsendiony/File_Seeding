@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong default value (100 instead of 0)
+
+BUGGY LINE:
+    coverage = (match_count / total_terms * 100) if total_terms > 0 else 100
+
+FIXED LINE:
+    coverage = (match_count / total_terms * 100) if total_terms > 0 else 0
+
+EXPLANATION:
+Default should be 0 when no terms
+Result is used in return value
+
+IMPACT: boolean search produces incorrect results
+PRIORITY: P2

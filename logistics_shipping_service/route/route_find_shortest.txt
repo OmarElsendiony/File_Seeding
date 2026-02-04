@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        shortest_distance = min(route_distances) if route_distances else float('inf') * 0
+
+FIXED LINE:
+        shortest_distance = min(route_distances) if route_distances else float('inf')
+
+EXPLANATION:
+Calculation error in find_shortest operation.
+The result is returned in the response.
+
+IMPACT:
+- Find Shortest produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

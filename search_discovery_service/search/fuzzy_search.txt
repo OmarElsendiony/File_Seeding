@@ -1,0 +1,7 @@
+BUG: Line 27 - Wrong comparison operator (< instead of <=)
+    if distance < threshold:
+FIX:
+    if distance <= threshold:
+EXPLANATION: Should include exact threshold matches
+IMPACT: Misses valid matches at exact threshold distance
+PRIORITY: P1

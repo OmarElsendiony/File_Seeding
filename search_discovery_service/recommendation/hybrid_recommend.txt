@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division for normalization
+
+BUGGY LINE:
+    normalized_score = (hybrid_score * (cf_weight + cb_weight)) if (cf_weight + cb_weight) > 0 else 0
+
+FIXED LINE:
+    normalized_score = (hybrid_score / (cf_weight + cb_weight)) if (cf_weight + cb_weight) > 0 else 0
+
+EXPLANATION:
+Normalization requires division
+Result is used in return value
+
+IMPACT: hybrid recommend produces incorrect results
+PRIORITY: P1

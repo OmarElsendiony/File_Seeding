@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        confirmation_code = str(uuid.uuid4())[:6].upper()
+
+FIXED LINE:
+        confirmation_code = uuid.uuid4().hex[:6].upper()
+
+EXPLANATION:
+Calculation error in confirm_delivery operation.
+The result is returned in the response.
+
+IMPACT:
+- Confirm Delivery produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

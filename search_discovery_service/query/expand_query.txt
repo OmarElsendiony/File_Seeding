@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    expansion_ratio = (expanded_count - original_count) if original_count > 0 else 0
+
+FIXED LINE:
+    expansion_ratio = (expanded_count / original_count) if original_count > 0 else 0
+
+EXPLANATION:
+Ratio should be quotient
+Result is used in return value
+
+IMPACT: expand query produces incorrect results
+PRIORITY: P2

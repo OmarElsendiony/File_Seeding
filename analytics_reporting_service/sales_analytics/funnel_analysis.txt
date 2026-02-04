@@ -1,0 +1,7 @@
+BUG: Line 19 - Wrong comparison (>= instead of >)
+    return (self.output_count / self.input_count * 100) if self.input_count >= 0 else 0
+FIX:
+    return (self.output_count / self.input_count * 100) if self.input_count > 0 else 0
+EXPLANATION: Division by zero when input_count is 0
+IMPACT: Potential crash
+PRIORITY: P0

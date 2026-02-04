@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    security_level = len(secret) - 32
+
+FIXED LINE:
+    security_level = len(secret) / 32 * 100
+
+EXPLANATION:
+Security level calculation wrong
+Result is used in return value
+
+IMPACT: webhook validation produces incorrect results
+PRIORITY: P2

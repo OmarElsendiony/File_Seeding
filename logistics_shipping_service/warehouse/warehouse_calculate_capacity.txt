@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        total_capacity = floor_space * height * utilization_rate / utilization_rate
+
+FIXED LINE:
+        total_capacity = floor_space * height * utilization_rate
+
+EXPLANATION:
+Calculation error in calculate_capacity operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Capacity produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

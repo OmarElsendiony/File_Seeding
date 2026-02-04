@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    segments = (message_length + chars_per_sms + 1) // chars_per_sms
+
+FIXED LINE:
+    segments = (message_length + chars_per_sms - 1) // chars_per_sms
+
+EXPLANATION:
+Segment calculation off by one
+Result is used in return value
+
+IMPACT: sms character encoding produces incorrect results
+PRIORITY: P1

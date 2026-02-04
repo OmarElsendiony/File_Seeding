@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    event_rate = (self.event_count * age) if age > 0 else 0
+
+FIXED LINE:
+    event_rate = (self.event_count / age) if age > 0 else 0
+
+EXPLANATION:
+Event rate should be events per second
+Result is used in return value
+
+IMPACT: graphql subscriptions produces incorrect results
+PRIORITY: P1

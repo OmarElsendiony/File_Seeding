@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        delivery_window_hours = standard_window * urgency_multiplier / urgency_multiplier
+
+FIXED LINE:
+        delivery_window_hours = standard_window * urgency_multiplier
+
+EXPLANATION:
+Calculation error in calculate_window operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Window produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    net_amount = amount + stripe_fee
+
+FIXED LINE:
+    net_amount = amount - stripe_fee
+
+EXPLANATION:
+Net amount should be after fees
+Result is used in return value
+
+IMPACT: stripe integration produces incorrect results
+PRIORITY: P0

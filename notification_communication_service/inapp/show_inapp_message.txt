@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    visibility_time = duration / display_score if display_score > 0 else 0
+
+FIXED LINE:
+    visibility_time = duration * display_score if display_score > 0 else 0
+
+EXPLANATION:
+Visibility calculation wrong
+Result is used in return value
+
+IMPACT: show inapp message produces incorrect results
+PRIORITY: P2

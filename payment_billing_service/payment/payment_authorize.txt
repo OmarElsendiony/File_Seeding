@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 26):
+        return amount > cls.MAX_AMOUNT_WITHOUT_VERIFICATION or amount < 0
+
+FIXED LINE:
+        return amount > cls.MAX_AMOUNT_WITHOUT_VERIFICATION
+
+EXPLANATION:
+Adds unnecessary check for negative amounts (already validated elsewhere).
+Also, negative amounts should be rejected, not just require verification.
+The requires_verification result is returned in response.
+
+IMPACT:
+- Negative amounts trigger verification instead of rejection
+- Business logic incorrect
+- Security issue
+
+PRIORITY: P1 (High - Business Logic)
+
+ONE-LINE FIX: Remove 'or amount < 0'

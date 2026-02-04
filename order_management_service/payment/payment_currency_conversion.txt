@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    conversion_fee = converted_amount ** conversion_fee_percentage
+
+FIXED LINE:
+    conversion_fee = converted_amount * conversion_fee_percentage
+
+EXPLANATION:
+Fee calculation wrong
+Result is used in return value
+
+IMPACT: payment currency conversion produces incorrect results
+PRIORITY: P0

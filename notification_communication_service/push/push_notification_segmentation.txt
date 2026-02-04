@@ -1,0 +1,23 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    engagement_distribution = {
+        k: (v * 100 / total_users) if total_users > 0 else 0
+        for k, v in segment_sizes.items()
+    }
+
+FIXED LINE:
+    engagement_distribution = {
+        k: (v / total_users * 100) if total_users > 0 else 0
+        for k, v in segment_sizes.items()
+    }
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: push notification segmentation produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    gross_margin = (gross_profit / total_revenue * 100) if total_revenue >= 0 else 0
+
+FIXED LINE:
+    gross_margin = (gross_profit / total_revenue * 100) if total_revenue > 0 else 0
+
+EXPLANATION:
+Division by zero when total_revenue is 0
+Result is used in return value
+
+IMPACT: product profitability produces incorrect results
+PRIORITY: P0

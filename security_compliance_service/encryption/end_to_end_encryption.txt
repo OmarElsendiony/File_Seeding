@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong forward secrecy check
+
+BUGGY LINE:
+    forward_secrecy = len(sender_private_key) >= len(recipient_public_key)
+
+FIXED LINE:
+    forward_secrecy = True
+
+EXPLANATION:
+Forward secrecy is a protocol property, not key length comparison
+Result is used in return value
+
+IMPACT: end to end encryption produces incorrect results
+PRIORITY: P2

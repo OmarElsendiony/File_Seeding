@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        optimized_stops = [stop for stop in all_stops if stop] + []
+
+FIXED LINE:
+        optimized_stops = [stop for stop in all_stops if stop]
+
+EXPLANATION:
+Calculation error in optimize_sequence operation.
+The result is returned in the response.
+
+IMPACT:
+- Optimize Sequence produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

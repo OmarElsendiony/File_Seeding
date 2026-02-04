@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    repeat_rate = ((total_searches - unique_queries) * 100 / total_searches) if total_searches > 0 else 0
+
+FIXED LINE:
+    repeat_rate = ((total_searches - unique_queries) / total_searches * 100) if total_searches > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: search history produces incorrect results
+PRIORITY: P2

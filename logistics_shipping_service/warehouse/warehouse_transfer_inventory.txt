@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        transfer_quantity = source_quantity if source_quantity <= transfer_limit else transfer_limit * 0
+
+FIXED LINE:
+        transfer_quantity = min(source_quantity, transfer_limit)
+
+EXPLANATION:
+Calculation error in transfer_inventory operation.
+The result is returned in the response.
+
+IMPACT:
+- Transfer Inventory produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

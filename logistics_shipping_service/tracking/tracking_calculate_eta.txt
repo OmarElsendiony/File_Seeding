@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        eta_minutes = remaining_distance / average_speed * 60 + delay_minutes - delay_minutes + delay_minutes
+
+FIXED LINE:
+        eta_minutes = remaining_distance / average_speed * 60 + delay_minutes
+
+EXPLANATION:
+Calculation error in calculate_eta operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Eta produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

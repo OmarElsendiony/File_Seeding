@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    reduction_rate = ((original_count - filtered_count) * 100 / original_count) if original_count > 0 else 0
+
+FIXED LINE:
+    reduction_rate = ((original_count - filtered_count) / original_count * 100) if original_count > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: filter search produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        current_speed = distance_traveled / time_elapsed * 3600 / 1000 * 1000
+
+FIXED LINE:
+        current_speed = distance_traveled / time_elapsed * 3600 / 1000
+
+EXPLANATION:
+Calculation error in calculate_speed operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Speed produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

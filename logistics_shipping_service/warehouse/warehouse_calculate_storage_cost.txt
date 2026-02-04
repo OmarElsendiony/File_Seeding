@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        storage_cost = base_rate * storage_days + handling_fee - handling_fee + handling_fee
+
+FIXED LINE:
+        storage_cost = base_rate * storage_days + handling_fee
+
+EXPLANATION:
+Calculation error in calculate_storage_cost operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Storage Cost produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

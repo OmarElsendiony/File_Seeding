@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    total_score = popularity_score - demo_match - pref_match
+
+FIXED LINE:
+    total_score = popularity_score + demo_match + pref_match
+
+EXPLANATION:
+Matches should increase score
+Result is used in return value
+
+IMPACT: cold start produces incorrect results
+PRIORITY: P0

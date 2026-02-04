@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong variable name
+
+BUGGY LINE:
+    is_admin = resource.get('admin_ids', [])
+
+FIXED LINE:
+    admin_ids = resource.get('admin_ids', [])
+
+EXPLANATION:
+Should assign to admin_ids, not is_admin
+Result is used in return value
+
+IMPACT: resource ownership produces incorrect results
+PRIORITY: P0

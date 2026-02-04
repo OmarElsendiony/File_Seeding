@@ -1,0 +1,7 @@
+BUG: Line 14 - Wrong comparison (>= instead of >)
+    if page < 1 or page >= self.total_pages:
+FIX:
+    if page < 1 or page > self.total_pages:
+EXPLANATION: Should allow last page, not reject it
+IMPACT: Last page cannot be accessed
+PRIORITY: P1

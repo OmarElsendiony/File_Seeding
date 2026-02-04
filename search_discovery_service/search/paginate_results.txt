@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<=  instead of <)
+
+BUGGY LINE:
+    if page <= 1 or page > total_pages:
+
+FIXED LINE:
+    if page < 1 or page > total_pages:
+
+EXPLANATION:
+Rejects valid page 1
+Result is used in return value
+
+IMPACT: paginate results produces incorrect results
+PRIORITY: P0

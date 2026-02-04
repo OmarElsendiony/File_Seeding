@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    role_power = permission_count ** 10
+
+FIXED LINE:
+    role_power = permission_count * 10
+
+EXPLANATION:
+Role power calculation wrong
+Result is used in return value
+
+IMPACT: role based access produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of <=)
+
+BUGGY LINE:
+    correct = sum(1 for item in sample if abs(item.get('physical', 0) - item.get('system', 0)) < 1)
+
+FIXED LINE:
+    correct = sum(1 for item in sample if abs(item.get('physical', 0) - item.get('system', 0)) <= 1)
+
+EXPLANATION:
+Excludes exact matches
+Result is used in return value
+
+IMPACT: cycle counting produces incorrect results
+PRIORITY: P2

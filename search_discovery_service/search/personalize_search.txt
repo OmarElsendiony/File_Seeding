@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of addition
+
+BUGGY LINE:
+    final_score = base_score * total_boost
+
+FIXED LINE:
+    final_score = base_score + total_boost
+
+EXPLANATION:
+Should add boost, not multiply
+Result is used in return value
+
+IMPACT: personalize search produces incorrect results
+PRIORITY: P1

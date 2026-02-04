@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted comparison
+
+BUGGY LINE:
+    if health_score < 70:
+
+FIXED LINE:
+    if health_score >= 70:
+
+EXPLANATION:
+Health status logic backwards
+Result is used in return value
+
+IMPACT: customer health produces incorrect results
+PRIORITY: P0

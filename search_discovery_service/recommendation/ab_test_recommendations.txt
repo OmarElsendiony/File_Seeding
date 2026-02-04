@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    lift = ((avg_score_selected - avg_score_alternative) * 100 / avg_score_alternative) if avg_score_alternative > 0 else 0
+
+FIXED LINE:
+    lift = ((avg_score_selected - avg_score_alternative) / avg_score_alternative * 100) if avg_score_alternative > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: ab test recommendations produces incorrect results
+PRIORITY: P2

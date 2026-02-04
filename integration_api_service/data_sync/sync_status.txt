@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    sync_health = (100 + time_since_sync / sync_interval_minutes * 100)
+
+FIXED LINE:
+    sync_health = (100 - time_since_sync / sync_interval_minutes * 100)
+
+EXPLANATION:
+Health should decrease with time
+Result is used in return value
+
+IMPACT: sync status produces incorrect results
+PRIORITY: P1

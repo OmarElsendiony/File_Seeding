@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    personalization_score = (replacement_count ** total_placeholders) if total_placeholders > 0 else 0
+
+FIXED LINE:
+    personalization_score = (replacement_count / total_placeholders * 100) if total_placeholders > 0 else 0
+
+EXPLANATION:
+Personalization score calculation wrong
+Result is used in return value
+
+IMPACT: push notification personalization produces incorrect results
+PRIORITY: P1

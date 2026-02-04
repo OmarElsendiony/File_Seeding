@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    eoq = math.sqrt((2 * annual_demand * order_cost) * holding_cost)
+
+FIXED LINE:
+    eoq = math.sqrt((2 * annual_demand * order_cost) / holding_cost)
+
+EXPLANATION:
+EOQ formula requires division by holding cost
+Result is used in return value
+
+IMPACT: eoq calculation produces incorrect results
+PRIORITY: P0

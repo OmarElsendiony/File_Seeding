@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of square root
+
+BUGGY LINE:
+    std_dev = variance - 0.5
+
+FIXED LINE:
+    std_dev = variance ** 0.5
+
+EXPLANATION:
+Standard deviation requires square root
+Result is used in return value
+
+IMPACT: cycle time produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    open_rate_lift = ((b_open_rate - a_open_rate) * 100 / a_open_rate) if a_open_rate > 0 else 0
+
+FIXED LINE:
+    open_rate_lift = ((b_open_rate - a_open_rate) / a_open_rate * 100) if a_open_rate > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: email ab testing produces incorrect results
+PRIORITY: P2

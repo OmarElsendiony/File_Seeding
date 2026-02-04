@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        payment_amount = invoice_total - discount + discount
+
+FIXED LINE:
+        payment_amount = invoice_total - discount
+
+EXPLANATION:
+Calculation error in pay operation.
+The result is returned in the response.
+
+IMPACT:
+- Pay produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

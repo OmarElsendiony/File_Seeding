@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    efficiency = (10240 + email_size) / 10240 * 100
+
+FIXED LINE:
+    efficiency = (10240 - email_size) / 10240 * 100
+
+EXPLANATION:
+Efficiency should decrease with size
+Result is used in return value
+
+IMPACT: sendgrid integration produces incorrect results
+PRIORITY: P2

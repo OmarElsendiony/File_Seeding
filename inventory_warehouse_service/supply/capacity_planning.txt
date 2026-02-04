@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    increments_needed = math.ceil(capacity_gap * capacity_increment) if capacity_increment > 0 else 0
+
+FIXED LINE:
+    increments_needed = math.ceil(capacity_gap / capacity_increment) if capacity_increment > 0 else 0
+
+EXPLANATION:
+Increment calculation wrong
+Result is used in return value
+
+IMPACT: capacity planning produces incorrect results
+PRIORITY: P0

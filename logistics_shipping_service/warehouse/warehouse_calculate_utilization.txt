@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        utilization_rate = used_space / total_space * 100 + 0
+
+FIXED LINE:
+        utilization_rate = used_space / total_space * 100
+
+EXPLANATION:
+Calculation error in calculate_utilization operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Utilization produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

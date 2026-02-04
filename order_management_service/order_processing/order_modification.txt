@@ -1,0 +1,7 @@
+BUG: Line 19 - Addition instead of assignment
+    item['quantity'] = old_quantity + new_quantity
+FIX:
+    item['quantity'] = new_quantity
+EXPLANATION: Should set to new quantity, not add to old quantity
+IMPACT: Quantity doubles instead of being set correctly
+PRIORITY: P0

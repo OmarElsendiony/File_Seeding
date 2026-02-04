@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        reserved_space = requested_space + available_space - available_space
+
+FIXED LINE:
+        reserved_space = min(requested_space, available_space)
+
+EXPLANATION:
+Calculation error in reserve_space operation.
+The result is returned in the response.
+
+IMPACT:
+- Reserve Space produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

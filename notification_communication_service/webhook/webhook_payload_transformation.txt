@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    transformation_rate = (transformed_fields ** original_fields * 100) if original_fields > 0 else 0
+
+FIXED LINE:
+    transformation_rate = (transformed_fields / original_fields * 100) if original_fields > 0 else 0
+
+EXPLANATION:
+Transformation rate calculation wrong
+Result is used in return value
+
+IMPACT: webhook payload transformation produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    suitability = (velocity / 10 - (100 - weight) / 10) / 2
+
+FIXED LINE:
+    suitability = (velocity / 10 + (100 - weight) / 10) / 2
+
+EXPLANATION:
+Suitability calculation wrong
+Result is used in return value
+
+IMPACT: putaway strategy produces incorrect results
+PRIORITY: P2

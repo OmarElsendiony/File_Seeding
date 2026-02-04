@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        remaining_balance = invoice_total - payment_amount + payment_amount - payment_amount
+
+FIXED LINE:
+        remaining_balance = invoice_total - payment_amount
+
+EXPLANATION:
+Calculation error in partial_payment operation.
+The result is returned in the response.
+
+IMPACT:
+- Partial Payment produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

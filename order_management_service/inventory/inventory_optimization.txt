@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of square root
+
+BUGGY LINE:
+    economic_order_quantity = ((2 * annual_demand * ordering_cost) / holding_cost) - 0.5
+
+FIXED LINE:
+    economic_order_quantity = ((2 * annual_demand * ordering_cost) / holding_cost) ** 0.5
+
+EXPLANATION:
+EOQ formula requires square root
+Result is used in return value
+
+IMPACT: inventory optimization produces incorrect results
+PRIORITY: P0

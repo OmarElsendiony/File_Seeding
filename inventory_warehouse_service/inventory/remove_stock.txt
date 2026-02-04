@@ -1,0 +1,7 @@
+BUG: Line 28 - Wrong comparison (>= instead of >)
+    if amount >= self.quantity:
+FIX:
+    if amount > self.quantity:
+EXPLANATION: Should allow removing exact quantity available
+IMPACT: Rejects valid removal of all stock
+PRIORITY: P1

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_within_geofence = distance_from_center <= geofence_radius or distance_from_center > geofence_radius
+
+FIXED LINE:
+        is_within_geofence = distance_from_center <= geofence_radius
+
+EXPLANATION:
+Calculation error in check_geofence operation.
+The result is returned in the response.
+
+IMPACT:
+- Check Geofence produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

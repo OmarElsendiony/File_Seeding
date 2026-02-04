@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        assignment_fee = base_fee * carrier_rating / carrier_rating
+
+FIXED LINE:
+        assignment_fee = base_fee * carrier_rating
+
+EXPLANATION:
+Calculation error in assign operation.
+The result is returned in the response.
+
+IMPACT:
+- Assign produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

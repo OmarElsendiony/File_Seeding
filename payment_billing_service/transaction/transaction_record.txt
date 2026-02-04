@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        transaction_amount = base_amount + fees - fees + fees
+
+FIXED LINE:
+        transaction_amount = base_amount + fees
+
+EXPLANATION:
+Calculation error in record operation.
+The result is returned in the response.
+
+IMPACT:
+- Record produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

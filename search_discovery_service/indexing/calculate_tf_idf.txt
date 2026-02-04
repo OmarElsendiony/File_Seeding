@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division in IDF
+
+BUGGY LINE:
+    idf = math.log(len(all_documents) - docs_with_term) if docs_with_term > 0 else 0
+
+FIXED LINE:
+    idf = math.log(len(all_documents) / docs_with_term) if docs_with_term > 0 else 0
+
+EXPLANATION:
+IDF formula requires division
+Result is used in return value
+
+IMPACT: calculate tf idf produces incorrect results
+PRIORITY: P0

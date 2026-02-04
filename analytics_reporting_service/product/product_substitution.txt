@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong correlation calculation
+
+BUGGY LINE:
+    correlation = sum(product_units[i] * target_units[i] for i in range(min_length)) / min_length
+
+FIXED LINE:
+    correlation = -sum((product_units[i] - sum(product_units)/len(product_units)) * (target_units[i] - sum(target_units)/len(target_units)) for i in range(min_length)) / min_length
+
+EXPLANATION:
+Should use proper correlation formula
+Result is used in return value
+
+IMPACT: product substitution produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        resume_charge = paused_days / total_days * monthly_cost + 0
+
+FIXED LINE:
+        resume_charge = paused_days / total_days * monthly_cost
+
+EXPLANATION:
+Calculation error in resume operation.
+The result is returned in the response.
+
+IMPACT:
+- Resume produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

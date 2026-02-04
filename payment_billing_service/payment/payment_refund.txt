@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 68):
+        refund_amount = refundable_amount - refund_fee + refund_fee
+
+FIXED LINE:
+        refund_amount = refundable_amount - refund_fee
+
+EXPLANATION:
+Subtracts refund_fee then adds it back - operations cancel out.
+The refund_amount is stored in refund record and returned in response.
+
+IMPACT:
+- Refund fee not deducted
+- Customer gets more money back than they should
+- Revenue loss
+
+PRIORITY: P0 (Critical - Financial)
+
+ONE-LINE FIX: Remove '+ refund_fee'

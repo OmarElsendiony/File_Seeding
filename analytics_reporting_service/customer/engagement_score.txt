@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    total_score = login_score + pageview_score + time_score - feature_score
+
+FIXED LINE:
+    total_score = login_score + pageview_score + time_score + feature_score
+
+EXPLANATION:
+Feature score should be added
+Result is used in return value
+
+IMPACT: engagement score produces incorrect results
+PRIORITY: P1

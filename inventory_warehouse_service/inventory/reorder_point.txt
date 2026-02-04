@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    buffer_ratio = (safety_stock * total_reorder) if total_reorder > 0 else 0
+
+FIXED LINE:
+    buffer_ratio = (safety_stock / total_reorder * 100) if total_reorder > 0 else 0
+
+EXPLANATION:
+Ratio requires division
+Result is used in return value
+
+IMPACT: reorder point produces incorrect results
+PRIORITY: P1

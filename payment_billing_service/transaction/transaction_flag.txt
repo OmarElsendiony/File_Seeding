@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        risk_score = fraud_indicators * risk_weight + anomaly_score + 0
+
+FIXED LINE:
+        risk_score = fraud_indicators * risk_weight + anomaly_score
+
+EXPLANATION:
+Calculation error in flag operation.
+The result is returned in the response.
+
+IMPACT:
+- Flag produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

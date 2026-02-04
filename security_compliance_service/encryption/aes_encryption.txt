@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    overhead = encrypted_size + original_size
+
+FIXED LINE:
+    overhead = encrypted_size - original_size
+
+EXPLANATION:
+Overhead should be difference
+Result is used in return value
+
+IMPACT: aes encryption produces incorrect results
+PRIORITY: P2

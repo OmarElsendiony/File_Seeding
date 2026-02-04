@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        interest_amount = outstanding_balance * interest_rate / 12 / 100 * 100
+
+FIXED LINE:
+        interest_amount = outstanding_balance * interest_rate / 12 / 100
+
+EXPLANATION:
+Calculation error in calculate_interest operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Interest produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

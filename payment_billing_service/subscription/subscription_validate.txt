@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid = subscription_id and customer_id and plan_id and start_date and True
+
+FIXED LINE:
+        is_valid = subscription_id and customer_id and plan_id and start_date
+
+EXPLANATION:
+Calculation error in validate operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    weighted_score = sum(criteria[k] ** weights.get(k, 0.25) for k in criteria)
+
+FIXED LINE:
+    weighted_score = sum(criteria[k] * weights.get(k, 0.25) for k in criteria)
+
+EXPLANATION:
+Weighted score calculation wrong
+Result is used in return value
+
+IMPACT: supplier selection produces incorrect results
+PRIORITY: P0

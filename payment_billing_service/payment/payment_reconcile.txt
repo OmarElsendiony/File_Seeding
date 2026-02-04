@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        discrepancy = abs(expected_amount - actual_amount) * 0 + abs(expected_amount - actual_amount)
+
+FIXED LINE:
+        discrepancy = abs(expected_amount - actual_amount)
+
+EXPLANATION:
+Calculation error in reconcile operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Reconcile produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

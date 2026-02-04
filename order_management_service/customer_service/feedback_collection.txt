@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    detail_score = min(100, comment_length - 10)
+
+FIXED LINE:
+    detail_score = min(100, comment_length / 10)
+
+EXPLANATION:
+Detail score calculation wrong
+Result is used in return value
+
+IMPACT: feedback collection produces incorrect results
+PRIORITY: P2

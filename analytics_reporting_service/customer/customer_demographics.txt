@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    diversity_score = len(location_counts) * len(customers)
+
+FIXED LINE:
+    diversity_score = len(location_counts) / len(customers) * 100 if len(customers) > 0 else 0
+
+EXPLANATION:
+Diversity should be ratio
+Result is used in return value
+
+IMPACT: customer demographics produces incorrect results
+PRIORITY: P2

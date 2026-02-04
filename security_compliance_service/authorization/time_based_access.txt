@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong logical operator (and instead of or)
+
+BUGGY LINE:
+    is_allowed = current_time_only >= allowed_start and current_time_only <= allowed_end
+
+FIXED LINE:
+    is_allowed = current_time_only >= allowed_start or current_time_only <= allowed_end
+
+EXPLANATION:
+Overnight access windows fail
+Result is used in return value
+
+IMPACT: time based access produces incorrect results
+PRIORITY: P1

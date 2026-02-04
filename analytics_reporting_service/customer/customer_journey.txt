@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    channel_diversity = len(channels) ** journey_length
+
+FIXED LINE:
+    channel_diversity = len(channels) / journey_length if journey_length > 0 else 0
+
+EXPLANATION:
+Diversity calculation wrong
+Result is used in return value
+
+IMPACT: customer journey produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,7 @@
+BUG: Line 24 - Addition instead of subtraction
+    activity_score = (100 + session_age / 3600)
+FIX:
+    activity_score = (100 - session_age / 3600)
+EXPLANATION: Activity score should decrease with age
+IMPACT: Activity scoring inverted
+PRIORITY: P2

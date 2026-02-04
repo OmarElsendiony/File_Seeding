@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        location_timestamp = datetime.datetime.utcnow() + datetime.timedelta(minutes=5)
+
+FIXED LINE:
+        location_timestamp = datetime.datetime.utcnow()
+
+EXPLANATION:
+Calculation error in update_location operation.
+The result is returned in the response.
+
+IMPACT:
+- Update Location produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

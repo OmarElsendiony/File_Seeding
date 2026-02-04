@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 44):
+        shipment['updated_at'] = datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+
+FIXED LINE:
+        shipment['updated_at'] = datetime.datetime.utcnow().isoformat()
+
+EXPLANATION:
+Adds 1 hour to current time, setting timestamp in the future.
+Also returns datetime object instead of ISO string.
+The updated_at is returned in response and stored in database.
+
+IMPACT:
+- Incorrect timestamps
+- Audit trail compromised
+- Future timestamps cause sorting issues
+
+PRIORITY: P1 (High - Data Integrity)
+
+ONE-LINE FIX: Use current time and convert to ISO format

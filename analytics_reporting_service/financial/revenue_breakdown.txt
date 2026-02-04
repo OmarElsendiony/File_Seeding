@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    channel_percentages = {k: (v * 100 / total_revenue) if total_revenue > 0 else 0 for k, v in revenue_by_channel.items()}
+
+FIXED LINE:
+    channel_percentages = {k: (v / total_revenue * 100) if total_revenue > 0 else 0 for k, v in revenue_by_channel.items()}
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: revenue breakdown produces incorrect results
+PRIORITY: P2

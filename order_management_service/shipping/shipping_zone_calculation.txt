@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong threshold
+
+BUGGY LINE:
+    if zone_difference <= 0:
+
+FIXED LINE:
+    if zone_difference < 50:
+
+EXPLANATION:
+Zone 1 should be for nearby areas, not zero difference
+Result is used in return value
+
+IMPACT: shipping zone calculation produces incorrect results
+PRIORITY: P2

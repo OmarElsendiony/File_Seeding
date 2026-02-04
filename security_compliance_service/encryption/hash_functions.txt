@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of multiplication
+
+BUGGY LINE:
+    collision_resistance = security_level + hash_length
+
+FIXED LINE:
+    collision_resistance = security_level * (hash_length / 64)
+
+EXPLANATION:
+Collision resistance formula wrong
+Result is used in return value
+
+IMPACT: hash functions produces incorrect results
+PRIORITY: P2

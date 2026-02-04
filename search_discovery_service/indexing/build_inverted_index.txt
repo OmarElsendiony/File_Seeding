@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    index_density = (total_terms ** total_docs) if total_docs > 0 else 0
+
+FIXED LINE:
+    index_density = (total_terms / total_docs) if total_docs > 0 else 0
+
+EXPLANATION:
+Density should be ratio, not power
+Result is used in return value
+
+IMPACT: build inverted index produces incorrect results
+PRIORITY: P1

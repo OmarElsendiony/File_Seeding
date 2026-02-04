@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    value_score = quality - cost
+
+FIXED LINE:
+    value_score = quality / cost
+
+EXPLANATION:
+Value score should be ratio
+Result is used in return value
+
+IMPACT: procurement optimization produces incorrect results
+PRIORITY: P1

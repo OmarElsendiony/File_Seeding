@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    total_cost = segments / cost_per_segment
+
+FIXED LINE:
+    total_cost = segments * cost_per_segment
+
+EXPLANATION:
+Cost calculation wrong
+Result is used in return value
+
+IMPACT: send sms produces incorrect results
+PRIORITY: P0

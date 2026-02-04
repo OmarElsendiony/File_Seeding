@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        retry_fee = 2.0 * retry_count
+
+FIXED LINE:
+        Correct calculation
+
+EXPLANATION:
+Calculation error in retry operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Retry produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

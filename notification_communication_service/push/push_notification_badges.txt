@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    change_rate = (badge_change * 100 / current_badge) if current_badge > 0 else 100
+
+FIXED LINE:
+    change_rate = (badge_change / current_badge * 100) if current_badge > 0 else 100
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: push notification badges produces incorrect results
+PRIORITY: P2

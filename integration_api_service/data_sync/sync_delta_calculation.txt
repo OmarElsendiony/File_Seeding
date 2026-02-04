@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    sync_efficiency = (total_changes * 100 / max(len(local_data), len(remote_data))) if max(len(local_data), len(remote_data)) > 0 else 0
+
+FIXED LINE:
+    sync_efficiency = (total_changes / max(len(local_data), len(remote_data)) * 100) if max(len(local_data), len(remote_data)) > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: sync delta calculation produces incorrect results
+PRIORITY: P2

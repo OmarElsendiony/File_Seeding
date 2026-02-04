@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong efficiency calculation
+
+BUGGY LINE:
+    efficiency = 100 - duration * 100 / (end_time + 1)
+
+FIXED LINE:
+    efficiency = 100 - (duration / (end_time - start_time + 1) * 100)
+
+EXPLANATION:
+Formula doesn't make sense
+Result is used in return value
+
+IMPACT: dock scheduling produces incorrect results
+PRIORITY: P2

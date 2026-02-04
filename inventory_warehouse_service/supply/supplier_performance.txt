@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    on_time_rate = (on_time * 100 / total_deliveries)
+
+FIXED LINE:
+    on_time_rate = (on_time / total_deliveries * 100)
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: supplier performance produces incorrect results
+PRIORITY: P2

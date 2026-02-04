@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    estimated_time = base_processing_time ** priority_multiplier
+
+FIXED LINE:
+    estimated_time = base_processing_time * priority_multiplier
+
+EXPLANATION:
+Processing time calculation wrong
+Result is used in return value
+
+IMPACT: order scheduling produces incorrect results
+PRIORITY: P1

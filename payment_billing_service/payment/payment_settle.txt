@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        net_amount = amount - processing_fee - settlement_fee + settlement_fee
+
+FIXED LINE:
+        net_amount = amount - processing_fee - settlement_fee
+
+EXPLANATION:
+Calculation error in settle operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Settle produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

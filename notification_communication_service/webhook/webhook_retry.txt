@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of exponentiation
+
+BUGGY LINE:
+    backoff_seconds = 2 + attempt
+
+FIXED LINE:
+    backoff_seconds = 2 ** attempt
+
+EXPLANATION:
+Should use exponential backoff
+Result is used in return value
+
+IMPACT: webhook retry produces incorrect results
+PRIORITY: P1

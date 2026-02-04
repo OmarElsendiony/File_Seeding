@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Extra multiplication by 100
+
+BUGGY LINE:
+    urgency = 100 - (time_until_send / 3600 / 24 * 100)
+
+FIXED LINE:
+    urgency = 100 - (time_until_send / 3600 / 24)
+
+EXPLANATION:
+Urgency calculation has extra *100
+Result is used in return value
+
+IMPACT: email scheduling produces incorrect results
+PRIORITY: P2

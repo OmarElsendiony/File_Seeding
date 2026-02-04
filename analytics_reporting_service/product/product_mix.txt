@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    diversity_index = len(category_revenue) - sum(category_percentages.values()) / 100
+
+FIXED LINE:
+    diversity_index = len(category_revenue) / sum(category_percentages.values()) * 100 if sum(category_percentages.values()) > 0 else 0
+
+EXPLANATION:
+Diversity calculation wrong
+Result is used in return value
+
+IMPACT: product mix produces incorrect results
+PRIORITY: P2

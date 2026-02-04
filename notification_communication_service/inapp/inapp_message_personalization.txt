@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    personalization_rate = (replacements * 100 / total_placeholders) if total_placeholders > 0 else 0
+
+FIXED LINE:
+    personalization_rate = (replacements / total_placeholders * 100) if total_placeholders > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: inapp message personalization produces incorrect results
+PRIORITY: P2

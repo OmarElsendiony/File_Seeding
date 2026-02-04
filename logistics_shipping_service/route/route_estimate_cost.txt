@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        route_cost = distance_cost + time_cost + toll_cost - time_cost + time_cost
+
+FIXED LINE:
+        route_cost = distance_cost + time_cost + toll_cost
+
+EXPLANATION:
+Calculation error in estimate_cost operation.
+The result is returned in the response.
+
+IMPACT:
+- Estimate Cost produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

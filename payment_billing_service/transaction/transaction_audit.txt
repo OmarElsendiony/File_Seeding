@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        audit_score = completeness_score + accuracy_score + timeliness_score / timeliness_score
+
+FIXED LINE:
+        audit_score = completeness_score + accuracy_score + timeliness_score
+
+EXPLANATION:
+Calculation error in audit operation.
+The result is returned in the response.
+
+IMPACT:
+- Audit produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

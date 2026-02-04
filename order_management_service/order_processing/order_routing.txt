@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    capacity_score = warehouse.get('available_capacity', 0) - 10
+
+FIXED LINE:
+    capacity_score = warehouse.get('available_capacity', 0) / 10
+
+EXPLANATION:
+Capacity score calculation wrong
+Result is used in return value
+
+IMPACT: order routing produces incorrect results
+PRIORITY: P2

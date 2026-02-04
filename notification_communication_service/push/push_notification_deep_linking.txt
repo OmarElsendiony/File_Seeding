@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    efficiency = (link_length * max_length) if max_length > 0 else 0
+
+FIXED LINE:
+    efficiency = ((max_length - link_length) / max_length * 100) if max_length > 0 else 0
+
+EXPLANATION:
+Efficiency calculation wrong
+Result is used in return value
+
+IMPACT: push notification deep linking produces incorrect results
+PRIORITY: P2

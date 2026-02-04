@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        carrier_score = service_quality + delivery_speed + cost_efficiency - service_quality + service_quality
+
+FIXED LINE:
+        carrier_score = service_quality + delivery_speed + cost_efficiency
+
+EXPLANATION:
+Calculation error in rate operation.
+The result is returned in the response.
+
+IMPACT:
+- Rate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong formula
+
+BUGGY LINE:
+    efficiency = cache_size - 100 if cache_size > 0 else 0
+
+FIXED LINE:
+    efficiency = (100 - cache_size) if cache_size < 100 else 0
+
+EXPLANATION:
+Efficiency should decrease with cache size
+Result is used in return value
+
+IMPACT: api caching produces incorrect results
+PRIORITY: P2

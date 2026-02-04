@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    carrying_rate = (total_cost ** inventory_value) if inventory_value > 0 else 0
+
+FIXED LINE:
+    carrying_rate = (total_cost / inventory_value * 100) if inventory_value > 0 else 0
+
+EXPLANATION:
+Rate should be percentage
+Result is used in return value
+
+IMPACT: carrying cost produces incorrect results
+PRIORITY: P0

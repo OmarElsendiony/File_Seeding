@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if urgency < 7:
+
+FIXED LINE:
+    if urgency > 7:
+
+EXPLANATION:
+Urgency threshold backwards
+Result is used in return value
+
+IMPACT: transportation mode produces incorrect results
+PRIORITY: P1

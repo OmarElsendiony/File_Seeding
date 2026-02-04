@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if item[key] in value:
+                        matches = False
+
+FIXED LINE:
+    if item[key] not in value:
+                        matches = False
+
+EXPLANATION:
+List filtering backwards
+Result is used in return value
+
+IMPACT: api filtering produces incorrect results
+PRIORITY: P0

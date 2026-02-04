@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    return_rate = (total_returned / total_sold * 100) if total_sold >= 0 else 0
+
+FIXED LINE:
+    return_rate = (total_returned / total_sold * 100) if total_sold > 0 else 0
+
+EXPLANATION:
+Division by zero when total_sold is 0
+Result is used in return value
+
+IMPACT: product returns produces incorrect results
+PRIORITY: P0

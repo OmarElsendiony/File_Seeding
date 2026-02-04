@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    reverse = (order != 'desc')
+
+FIXED LINE:
+    reverse = (order == 'desc')
+
+EXPLANATION:
+!= should be ==, reverses sort order
+Result is used in return value
+
+IMPACT: sort results produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        settlement_amount = gross_amount - fees - adjustments + adjustments
+
+FIXED LINE:
+        settlement_amount = gross_amount - fees - adjustments
+
+EXPLANATION:
+Calculation error in settle operation.
+The result is returned in the response.
+
+IMPACT:
+- Settle produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

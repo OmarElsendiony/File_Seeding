@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        selection_priority = carrier_capacity if carrier_available else carrier_capacity * 0
+
+FIXED LINE:
+        selection_priority = carrier_capacity if carrier_available else 0
+
+EXPLANATION:
+Calculation error in select operation.
+The result is returned in the response.
+
+IMPACT:
+- Select produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

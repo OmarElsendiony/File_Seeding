@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    segments = (message_length - 159) // 160 if message_length > 160 else 1
+
+FIXED LINE:
+    segments = (message_length + 159) // 160 if message_length > 160 else 1
+
+EXPLANATION:
+Segment calculation wrong
+Result is used in return value
+
+IMPACT: sms templates produces incorrect results
+PRIORITY: P1

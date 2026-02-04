@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of <=)
+
+BUGGY LINE:
+    on_time = sum(1 for lt in lead_times if lt < target_lead_time)
+
+FIXED LINE:
+    on_time = sum(1 for lt in lead_times if lt <= target_lead_time)
+
+EXPLANATION:
+Excludes orders at exact target
+Result is used in return value
+
+IMPACT: lead time analysis produces incorrect results
+PRIORITY: P2

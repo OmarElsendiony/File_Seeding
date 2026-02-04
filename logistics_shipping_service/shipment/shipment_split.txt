@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        package_weights = [total_weight / num_packages] * num_packages
+
+FIXED LINE:
+        package_weights = [total_weight / num_packages for _ in range(num_packages)]
+
+EXPLANATION:
+Calculation error in split operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Split produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

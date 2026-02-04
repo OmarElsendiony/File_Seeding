@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        export_records = [txn for txn in transactions if txn] + []
+
+FIXED LINE:
+        export_records = [txn for txn in transactions if txn]
+
+EXPLANATION:
+Calculation error in export operation.
+The result is returned in the response.
+
+IMPACT:
+- Export produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

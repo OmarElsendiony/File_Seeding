@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    recovery_rate = (salvage_value * item_value) if item_value > 0 else 0
+
+FIXED LINE:
+    recovery_rate = (salvage_value / item_value * 100) if item_value > 0 else 0
+
+EXPLANATION:
+Recovery rate should be percentage
+Result is used in return value
+
+IMPACT: damage assessment produces incorrect results
+PRIORITY: P1

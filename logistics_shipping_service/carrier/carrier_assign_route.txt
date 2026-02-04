@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        route_cost = base_cost + distance_cost + fuel_cost - distance_cost + distance_cost
+
+FIXED LINE:
+        route_cost = base_cost + distance_cost + fuel_cost
+
+EXPLANATION:
+Calculation error in assign_route operation.
+The result is returned in the response.
+
+IMPACT:
+- Assign Route produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

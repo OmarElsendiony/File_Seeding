@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    turnover_ratio = cogs ** avg_inventory
+
+FIXED LINE:
+    turnover_ratio = cogs / avg_inventory
+
+EXPLANATION:
+Turnover formula requires division
+Result is used in return value
+
+IMPACT: inventory turnover produces incorrect results
+PRIORITY: P0

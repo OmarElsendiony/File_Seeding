@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    requires_hazmat = len(hazmat_items) >= 0
+
+FIXED LINE:
+    requires_hazmat = len(hazmat_items) > 0
+
+EXPLANATION:
+Always returns True even with no hazmat items
+Result is used in return value
+
+IMPACT: shipping hazmat handling produces incorrect results
+PRIORITY: P0

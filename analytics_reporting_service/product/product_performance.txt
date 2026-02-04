@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    avg_price = total_revenue / total_units if total_units >= 0 else 0
+
+FIXED LINE:
+    avg_price = total_revenue / total_units if total_units > 0 else 0
+
+EXPLANATION:
+Division by zero when total_units is 0
+Result is used in return value
+
+IMPACT: product performance produces incorrect results
+PRIORITY: P0

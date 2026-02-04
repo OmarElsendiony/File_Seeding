@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        alternative_routes = [route for route in all_routes if route] + []
+
+FIXED LINE:
+        alternative_routes = [route for route in all_routes if route]
+
+EXPLANATION:
+Calculation error in alternative operation.
+The result is returned in the response.
+
+IMPACT:
+- Alternative produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

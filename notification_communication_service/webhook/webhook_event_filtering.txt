@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if event[key] in value:
+                        matches = False
+
+FIXED LINE:
+    if event[key] not in value:
+                        matches = False
+
+EXPLANATION:
+List filtering backwards
+Result is used in return value
+
+IMPACT: webhook event filtering produces incorrect results
+PRIORITY: P0

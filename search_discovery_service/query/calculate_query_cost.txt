@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    total_cost = base_cost - posting_cost
+
+FIXED LINE:
+    total_cost = base_cost + posting_cost
+
+EXPLANATION:
+Costs should be added
+Result is used in return value
+
+IMPACT: calculate query cost produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,7 @@
+BUG: Line 38 - Integer division instead of float
+    transit_time = data['distance'] // 10
+FIX:
+    transit_time = data['distance'] / 10
+EXPLANATION: Integer division loses precision
+IMPACT: Transit time truncated to integer
+PRIORITY: P2

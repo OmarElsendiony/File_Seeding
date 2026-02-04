@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    efficiency = delivery_score - cost * 1000
+
+FIXED LINE:
+    efficiency = delivery_score / (1 + cost * 1000)
+
+EXPLANATION:
+Efficiency calculation wrong
+Result is used in return value
+
+IMPACT: firebase integration produces incorrect results
+PRIORITY: P2

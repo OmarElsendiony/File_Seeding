@@ -1,0 +1,7 @@
+BUG: Line 33 - Subtraction instead of addition in denominator
+    adjustment_rate = (abs(self.adjustment) / (self.previous_value - 1)) * 100
+FIX:
+    adjustment_rate = (abs(self.adjustment) / (self.previous_value + 1)) * 100
+EXPLANATION: Subtraction can cause division by zero
+IMPACT: Crash when previous_value is 1
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: max instead of min
+
+BUGGY LINE:
+    best_gateway = max(suitable_gateways, key=lambda g: g['total_fee'])
+
+FIXED LINE:
+    best_gateway = min(suitable_gateways, key=lambda g: g['total_fee'])
+
+EXPLANATION:
+Should select gateway with lowest fee
+Result is used in return value
+
+IMPACT: payment gateway selection produces incorrect results
+PRIORITY: P1

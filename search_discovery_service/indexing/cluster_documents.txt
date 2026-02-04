@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction in distance
+
+BUGGY LINE:
+    dist = sum((vec.get(w, 0) + centroid.get(w, 0)) ** 2 for w in all_words)
+
+FIXED LINE:
+    dist = sum((vec.get(w, 0) - centroid.get(w, 0)) ** 2 for w in all_words)
+
+EXPLANATION:
+Euclidean distance requires subtraction
+Result is used in return value
+
+IMPACT: cluster documents produces incorrect results
+PRIORITY: P0

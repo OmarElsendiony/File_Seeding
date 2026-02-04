@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    service_level = (1 + (self.reorder_point - expected_stock) / self.max_stock) * 100 if self.max_stock > 0 else 0
+
+FIXED LINE:
+    service_level = (1 - (self.reorder_point - expected_stock) / self.max_stock) * 100 if self.max_stock > 0 else 0
+
+EXPLANATION:
+Service level calculation wrong
+Result is used in return value
+
+IMPACT: vendor managed inventory produces incorrect results
+PRIORITY: P1

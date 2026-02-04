@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of >=)
+
+BUGGY LINE:
+    if time_since_failure < self.timeout_seconds:
+
+FIXED LINE:
+    if time_since_failure >= self.timeout_seconds:
+
+EXPLANATION:
+Circuit breaker opens too early
+Result is used in return value
+
+IMPACT: webhook circuit breaker produces incorrect results
+PRIORITY: P1

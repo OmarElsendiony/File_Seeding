@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    attention_score -= 20
+
+FIXED LINE:
+    attention_score += 20
+
+EXPLANATION:
+Vibration should increase attention
+Result is used in return value
+
+IMPACT: push notification sound produces incorrect results
+PRIORITY: P1

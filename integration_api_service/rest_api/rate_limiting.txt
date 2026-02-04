@@ -1,0 +1,7 @@
+BUG: Line 26 - Wrong comparison (>= instead of >)
+    utilization = ((self.capacity - self.tokens) / self.capacity * 100) if self.capacity >= 0 else 0
+FIX:
+    utilization = ((self.capacity - self.tokens) / self.capacity * 100) if self.capacity > 0 else 0
+EXPLANATION: Division by zero when capacity is 0
+IMPACT: Potential crash
+PRIORITY: P0

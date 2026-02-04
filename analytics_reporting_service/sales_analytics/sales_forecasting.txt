@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    confidence_interval = 1.96 ** mae
+
+FIXED LINE:
+    confidence_interval = 1.96 * mae
+
+EXPLANATION:
+Confidence interval calculation wrong
+Result is used in return value
+
+IMPACT: sales forecasting produces incorrect results
+PRIORITY: P1

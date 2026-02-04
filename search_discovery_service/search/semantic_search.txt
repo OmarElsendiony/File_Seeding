@@ -1,0 +1,7 @@
+BUG: Line 13 - Swapped variables in multiplication
+    return dot_product / (magnitude2 * magnitude1)
+FIX:
+    return dot_product / (magnitude1 * magnitude2)
+EXPLANATION: Order doesn't matter for multiplication, but conventionally wrong
+IMPACT: None mathematically, but confusing and inconsistent
+PRIORITY: P3 (Low - no functional impact)

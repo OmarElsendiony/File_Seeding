@@ -1,0 +1,7 @@
+BUG: Line 35 - Addition instead of subtraction
+    refund_amount = order_total * (refund_percentage / 100) + cancellation_fee
+FIX:
+    refund_amount = order_total * (refund_percentage / 100) - cancellation_fee
+EXPLANATION: Cancellation fee should be deducted from refund, not added
+IMPACT: Refund amount calculated incorrectly
+PRIORITY: P0

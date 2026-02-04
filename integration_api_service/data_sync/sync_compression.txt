@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    compression_ratio = (original_size - compressed_size) / original_size * 100 if original_size >= 0 else 0
+
+FIXED LINE:
+    compression_ratio = (original_size - compressed_size) / original_size * 100 if original_size > 0 else 0
+
+EXPLANATION:
+Division by zero when original_size is 0
+Result is used in return value
+
+IMPACT: sync compression produces incorrect results
+PRIORITY: P0

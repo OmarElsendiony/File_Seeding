@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    delivery_score = 100 + estimated_time * 10
+
+FIXED LINE:
+    delivery_score = 100 - estimated_time * 10
+
+EXPLANATION:
+Score should decrease with time
+Result is used in return value
+
+IMPACT: webhook delivery produces incorrect results
+PRIORITY: P2

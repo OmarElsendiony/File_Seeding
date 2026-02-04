@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    is_duplicate = len(potential_duplicates) >= 0
+
+FIXED LINE:
+    is_duplicate = len(potential_duplicates) > 0
+
+EXPLANATION:
+Always returns True even with no duplicates
+Result is used in return value
+
+IMPACT: order duplicate detection produces incorrect results
+PRIORITY: P0

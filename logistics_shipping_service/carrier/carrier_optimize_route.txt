@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        optimized_distance = original_distance * optimization_factor / optimization_factor
+
+FIXED LINE:
+        optimized_distance = original_distance * optimization_factor
+
+EXPLANATION:
+Calculation error in optimize_route operation.
+The result is returned in the response.
+
+IMPACT:
+- Optimize Route produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

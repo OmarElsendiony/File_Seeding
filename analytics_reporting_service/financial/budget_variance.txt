@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    variance_percentage = (variance / budgeted * 100) if budgeted >= 0 else 0
+
+FIXED LINE:
+    variance_percentage = (variance / budgeted * 100) if budgeted > 0 else 0
+
+EXPLANATION:
+Division by zero when budgeted is 0
+Result is used in return value
+
+IMPACT: budget variance produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    percentage = (count * 100 / total_new) if total_new > 0 else 0
+
+FIXED LINE:
+    percentage = (count / total_new * 100) if total_new > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: customer acquisition produces incorrect results
+PRIORITY: P2

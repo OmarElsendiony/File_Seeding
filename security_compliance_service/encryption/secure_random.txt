@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    entropy = length - 8
+
+FIXED LINE:
+    entropy = length * 8
+
+EXPLANATION:
+Entropy calculation wrong (bits = bytes * 8)
+Result is used in return value
+
+IMPACT: secure random produces incorrect results
+PRIORITY: P1

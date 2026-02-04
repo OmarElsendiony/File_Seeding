@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    security_score = encryption_layers - 100
+
+FIXED LINE:
+    security_score = encryption_layers * 50
+
+EXPLANATION:
+Security score calculation wrong
+Result is used in return value
+
+IMPACT: data at rest produces incorrect results
+PRIORITY: P2

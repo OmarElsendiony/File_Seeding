@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    warehouse_inventory[product_id] = available + quantity_needed
+
+FIXED LINE:
+    warehouse_inventory[product_id] = available - quantity_needed
+
+EXPLANATION:
+Should decrease inventory when reserving
+Result is used in return value
+
+IMPACT: inventory reservation produces incorrect results
+PRIORITY: P0

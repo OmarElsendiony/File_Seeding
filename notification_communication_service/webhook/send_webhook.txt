@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    if payload_size >= 1024 * 1024:
+
+FIXED LINE:
+    if payload_size > 1024 * 1024:
+
+EXPLANATION:
+Rejects payloads at exact limit
+Result is used in return value
+
+IMPACT: send webhook produces incorrect results
+PRIORITY: P2

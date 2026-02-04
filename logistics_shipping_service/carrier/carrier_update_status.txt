@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        status_timestamp = datetime.datetime.utcnow() - datetime.timedelta(minutes=10)
+
+FIXED LINE:
+        status_timestamp = datetime.datetime.utcnow()
+
+EXPLANATION:
+Calculation error in update_status operation.
+The result is returned in the response.
+
+IMPACT:
+- Update Status produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

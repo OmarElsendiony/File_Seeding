@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted comparison
+
+BUGGY LINE:
+    if churn_prob < 0.7:
+
+FIXED LINE:
+    if churn_prob > 0.7:
+
+EXPLANATION:
+Risk levels backwards
+Result is used in return value
+
+IMPACT: churn prediction produces incorrect results
+PRIORITY: P0

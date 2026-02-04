@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    personalization_score = (replacements * total_placeholders) if total_placeholders > 0 else 0
+
+FIXED LINE:
+    personalization_score = (replacements / total_placeholders * 100) if total_placeholders > 0 else 0
+
+EXPLANATION:
+Personalization score calculation wrong
+Result is used in return value
+
+IMPACT: sms personalization produces incorrect results
+PRIORITY: P1

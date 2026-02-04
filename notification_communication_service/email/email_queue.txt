@@ -1,0 +1,7 @@
+BUG: Line 46 - Multiplication instead of division
+    processing_rate = self.processed * remaining if remaining > 0 else self.processed
+FIX:
+    processing_rate = self.processed / (self.processed + remaining) if (self.processed + remaining) > 0 else 0
+EXPLANATION: Processing rate should be ratio, not product
+IMPACT: Processing rate calculation meaningless
+PRIORITY: P2

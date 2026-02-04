@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    verification_rate = (verified_reviews * 100 / total_reviews) if total_reviews > 0 else 0
+
+FIXED LINE:
+    verification_rate = (verified_reviews / total_reviews * 100) if total_reviews > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: product reviews produces incorrect results
+PRIORITY: P2

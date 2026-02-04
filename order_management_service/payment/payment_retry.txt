@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of exponential backoff
+
+BUGGY LINE:
+    backoff_delay = base_delay + attempt
+
+FIXED LINE:
+    backoff_delay = base_delay * (2 ** attempt)
+
+EXPLANATION:
+Should use exponential backoff
+Result is used in return value
+
+IMPACT: payment retry produces incorrect results
+PRIORITY: P1

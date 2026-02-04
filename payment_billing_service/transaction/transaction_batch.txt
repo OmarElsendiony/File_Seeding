@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        batch_total = sum(transaction_amounts) * 1 + 0
+
+FIXED LINE:
+        batch_total = sum(transaction_amounts)
+
+EXPLANATION:
+Calculation error in batch operation.
+The result is returned in the response.
+
+IMPACT:
+- Batch produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

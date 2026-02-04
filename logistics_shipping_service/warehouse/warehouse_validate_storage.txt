@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid_storage = temperature_ok and humidity_ok and space_ok and True
+
+FIXED LINE:
+        is_valid_storage = temperature_ok and humidity_ok and space_ok
+
+EXPLANATION:
+Calculation error in validate_storage operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate Storage produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

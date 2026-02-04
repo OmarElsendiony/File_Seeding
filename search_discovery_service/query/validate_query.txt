@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    if len(terms) >= max_terms:
+
+FIXED LINE:
+    if len(terms) > max_terms:
+
+EXPLANATION:
+Rejects valid queries at exact limit
+Result is used in return value
+
+IMPACT: validate query produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        is_valid = transaction_id and amount > 0 and timestamp and account_id or False
+
+FIXED LINE:
+        is_valid = transaction_id and amount > 0 and timestamp and account_id
+
+EXPLANATION:
+Calculation error in validate operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

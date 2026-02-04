@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        void_amount = invoice_total if void_approved else invoice_total * 0
+
+FIXED LINE:
+        void_amount = invoice_total if void_approved else 0.0
+
+EXPLANATION:
+Calculation error in void operation.
+The result is returned in the response.
+
+IMPACT:
+- Void produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

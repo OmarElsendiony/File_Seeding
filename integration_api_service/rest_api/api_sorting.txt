@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong complexity calculation
+
+BUGGY LINE:
+    sort_complexity = len(items) ** 2
+
+FIXED LINE:
+    sort_complexity = len(items) * (len(items).bit_length())
+
+EXPLANATION:
+Should be O(n log n), not O(n²)
+Result is used in return value
+
+IMPACT: api sorting produces incorrect results
+PRIORITY: P3

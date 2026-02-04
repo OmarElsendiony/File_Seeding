@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of addition
+
+BUGGY LINE:
+    merged_total = order1.get('total', 0) * order2.get('total', 0)
+
+FIXED LINE:
+    merged_total = order1.get('total', 0) + order2.get('total', 0)
+
+EXPLANATION:
+Should sum totals, not multiply
+Result is used in return value
+
+IMPACT: order merging produces incorrect results
+PRIORITY: P0

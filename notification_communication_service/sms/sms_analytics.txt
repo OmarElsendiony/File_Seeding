@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    delivery_rate = (delivered / sent * 100) if sent >= 0 else 0
+
+FIXED LINE:
+    delivery_rate = (delivered / sent * 100) if sent > 0 else 0
+
+EXPLANATION:
+Division by zero when sent is 0
+Result is used in return value
+
+IMPACT: sms analytics produces incorrect results
+PRIORITY: P0

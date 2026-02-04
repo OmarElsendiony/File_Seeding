@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of multiplication
+
+BUGGY LINE:
+    compensation_percentage = severity_score ** 10
+
+FIXED LINE:
+    compensation_percentage = severity_score * 10
+
+EXPLANATION:
+Compensation calculation wrong
+Result is used in return value
+
+IMPACT: complaint handling produces incorrect results
+PRIORITY: P1

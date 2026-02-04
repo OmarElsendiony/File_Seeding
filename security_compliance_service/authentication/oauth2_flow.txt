@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= instead of <)
+
+BUGGY LINE:
+    if len(client_secret) <= 32:
+
+FIXED LINE:
+    if len(client_secret) < 32:
+
+EXPLANATION:
+Rejects valid secrets at exactly 32 characters
+Result is used in return value
+
+IMPACT: oauth2 flow produces incorrect results
+PRIORITY: P2

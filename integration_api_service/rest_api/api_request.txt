@@ -1,0 +1,7 @@
+BUG: Line 47 - Wrong comparison (>= instead of >)
+    if body_size >= max_size:
+FIX:
+    if body_size > max_size:
+EXPLANATION: Should allow requests at exact size limit
+IMPACT: Rejects valid requests at boundary
+PRIORITY: P2

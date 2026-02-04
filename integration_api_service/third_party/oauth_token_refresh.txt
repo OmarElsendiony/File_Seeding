@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    refresh_efficiency = (time_until_expiry * 100 / expires_in) if expires_in > 0 else 0
+
+FIXED LINE:
+    refresh_efficiency = (time_until_expiry / expires_in * 100) if expires_in > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: oauth token refresh produces incorrect results
+PRIORITY: P2

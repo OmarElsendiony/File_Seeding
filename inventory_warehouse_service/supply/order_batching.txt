@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of <=)
+
+BUGGY LINE:
+    if current_size + order_size < max_batch_size:
+
+FIXED LINE:
+    if current_size + order_size <= max_batch_size:
+
+EXPLANATION:
+Doesn't utilize full batch capacity
+Result is used in return value
+
+IMPACT: order batching produces incorrect results
+PRIORITY: P2

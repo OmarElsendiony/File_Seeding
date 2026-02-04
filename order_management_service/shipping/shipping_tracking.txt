@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    avg_time_between_events = transit_time * event_count if event_count > 1 else 0
+
+FIXED LINE:
+    avg_time_between_events = transit_time / (event_count - 1) if event_count > 1 else 0
+
+EXPLANATION:
+Average calculation wrong
+Result is used in return value
+
+IMPACT: shipping tracking produces incorrect results
+PRIORITY: P1

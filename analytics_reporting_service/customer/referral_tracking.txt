@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    viral_coefficient = avg_referrals_per_referrer / referral_rate if referral_rate > 0 else 0
+
+FIXED LINE:
+    viral_coefficient = avg_referrals_per_referrer * (referral_rate / 100) if referral_rate > 0 else 0
+
+EXPLANATION:
+Viral coefficient calculation wrong
+Result is used in return value
+
+IMPACT: referral tracking produces incorrect results
+PRIORITY: P1

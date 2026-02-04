@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    urgency = (1 + days_until_expiry / days_threshold) * 100
+
+FIXED LINE:
+    urgency = (1 - days_until_expiry / days_threshold) * 100
+
+EXPLANATION:
+Urgency should increase as expiry approaches
+Result is used in return value
+
+IMPACT: expiry tracking produces incorrect results
+PRIORITY: P1

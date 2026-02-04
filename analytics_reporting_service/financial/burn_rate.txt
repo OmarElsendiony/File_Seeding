@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of division
+
+BUGGY LINE:
+    runway_months = current_cash - avg_monthly_burn if avg_monthly_burn > 0 else float('inf')
+
+FIXED LINE:
+    runway_months = current_cash / avg_monthly_burn if avg_monthly_burn > 0 else float('inf')
+
+EXPLANATION:
+Runway calculation requires division
+Result is used in return value
+
+IMPACT: burn rate produces incorrect results
+PRIORITY: P0

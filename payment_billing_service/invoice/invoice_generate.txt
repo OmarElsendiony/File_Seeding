@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        invoice_total = line_items_total + tax + fees - adjustments + adjustments
+
+FIXED LINE:
+        invoice_total = line_items_total + tax + fees - adjustments
+
+EXPLANATION:
+Calculation error in generate operation.
+The result is returned in the response.
+
+IMPACT:
+- Generate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

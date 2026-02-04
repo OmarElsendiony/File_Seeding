@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of exponentiation
+
+BUGGY LINE:
+    backoff_seconds = 2 - attempt
+
+FIXED LINE:
+    backoff_seconds = 2 ** attempt
+
+EXPLANATION:
+Backoff calculation wrong (exponential backoff)
+Result is used in return value
+
+IMPACT: sms retry logic produces incorrect results
+PRIORITY: P1

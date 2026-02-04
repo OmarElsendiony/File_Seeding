@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        dispute_amount = amount + dispute_fee - dispute_fee
+
+FIXED LINE:
+        dispute_amount = amount
+
+EXPLANATION:
+Calculation error in dispute operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Dispute produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

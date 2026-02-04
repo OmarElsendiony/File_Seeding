@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    score = action_weight / decay_factor
+
+FIXED LINE:
+    score = action_weight * decay_factor
+
+EXPLANATION:
+Decay should reduce score, not increase it
+Result is used in return value
+
+IMPACT: trending items produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        prorated_charge = monthly_charge / days_in_month * days_used + 0
+
+FIXED LINE:
+        prorated_charge = monthly_charge / days_in_month * days_used
+
+EXPLANATION:
+Calculation error in prorate operation.
+The result is returned in the response.
+
+IMPACT:
+- Prorate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

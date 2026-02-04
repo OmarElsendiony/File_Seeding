@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    count -= count_nodes(child)
+
+FIXED LINE:
+    count += count_nodes(child)
+
+EXPLANATION:
+Should add child counts
+Result is used in return value
+
+IMPACT: build suffix tree produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,7 @@
+BUG: Line 22 - Wrong comparison (< instead of <=)
+    active_users = [u for u in cohort_users if u.get('last_active_days_ago', 999) < period]
+FIX:
+    active_users = [u for u in cohort_users if u.get('last_active_days_ago', 999) <= period]
+EXPLANATION: Should include users at exact period boundary
+IMPACT: Retention rates underestimated
+PRIORITY: P1

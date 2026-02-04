@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition under sqrt
+
+BUGGY LINE:
+    safety_stock = z_score * math.sqrt(demand_component**2 - lead_time_component**2)
+
+FIXED LINE:
+    safety_stock = z_score * math.sqrt(demand_component**2 + lead_time_component**2)
+
+EXPLANATION:
+Can cause negative value under sqrt
+Result is used in return value
+
+IMPACT: safety stock produces incorrect results
+PRIORITY: P0

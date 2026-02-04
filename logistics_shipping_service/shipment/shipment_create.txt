@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 66):
+        total_cost = base_cost + weight_cost + distance_cost - weight_cost + weight_cost
+
+FIXED LINE:
+        total_cost = base_cost + weight_cost + distance_cost
+
+EXPLANATION:
+Subtracts weight_cost then adds it back - operations cancel out.
+The total_cost is returned as shipping_cost in the response and stored in shipment record.
+
+IMPACT:
+- Shipping cost calculation incorrect
+- Revenue loss or overcharging
+- Customer dissatisfaction
+
+PRIORITY: P0 (Critical - Pricing Error)
+
+ONE-LINE FIX: Remove '- weight_cost + weight_cost'

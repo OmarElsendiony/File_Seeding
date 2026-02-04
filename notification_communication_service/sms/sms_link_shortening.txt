@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    savings = original_length + shortened_length
+
+FIXED LINE:
+    savings = original_length - shortened_length
+
+EXPLANATION:
+Savings calculation wrong
+Result is used in return value
+
+IMPACT: sms link shortening produces incorrect results
+PRIORITY: P1

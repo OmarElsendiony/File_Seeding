@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        send_timestamp = int(datetime.datetime.utcnow().timestamp()) & 0xFFFFFFFF
+
+FIXED LINE:
+        send_timestamp = int(datetime.datetime.utcnow().timestamp())
+
+EXPLANATION:
+Calculation error in send operation.
+The result is returned in the response.
+
+IMPACT:
+- Send produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    utilization = (delivery_count * 100 / max_per_minute) if max_per_minute > 0 else 0
+
+FIXED LINE:
+    utilization = (delivery_count / max_per_minute * 100) if max_per_minute > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: webhook rate limiting produces incorrect results
+PRIORITY: P2

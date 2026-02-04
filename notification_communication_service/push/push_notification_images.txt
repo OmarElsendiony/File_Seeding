@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    visual_impact = (100 + payload_increase / 10)
+
+FIXED LINE:
+    visual_impact = (100 - payload_increase / 10)
+
+EXPLANATION:
+Visual impact should decrease with payload
+Result is used in return value
+
+IMPACT: push notification images produces incorrect results
+PRIORITY: P2

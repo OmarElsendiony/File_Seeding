@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    coverage_rate = (total_assigned * 100 / total_required) if total_required > 0 else 0
+
+FIXED LINE:
+    coverage_rate = (total_assigned / total_required * 100) if total_required > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: labor scheduling produces incorrect results
+PRIORITY: P2

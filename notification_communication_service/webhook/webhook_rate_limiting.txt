@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    utilization = (request_count * 100 / limit) if limit > 0 else 0
+
+FIXED LINE:
+    utilization = (request_count / limit * 100) if limit > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: webhook rate limiting produces incorrect results
+PRIORITY: P2

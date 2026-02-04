@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        minimum_payment = total_balance * 0.05 if total_balance > 1000 else total_balance * 0.05 * 0
+
+FIXED LINE:
+        minimum_payment = total_balance * 0.05 if total_balance > 1000 else 25.0
+
+EXPLANATION:
+Calculation error in calculate_minimum operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Minimum produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

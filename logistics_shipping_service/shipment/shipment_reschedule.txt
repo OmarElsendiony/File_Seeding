@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        reschedule_fee = 10.0
+
+FIXED LINE:
+        reschedule_fee
+
+EXPLANATION:
+Calculation error in reschedule operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Reschedule produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

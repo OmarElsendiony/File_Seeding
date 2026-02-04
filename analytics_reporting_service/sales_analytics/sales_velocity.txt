@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: max instead of min
+
+BUGGY LINE:
+    bottleneck = max(components, key=components.get)
+
+FIXED LINE:
+    bottleneck = min(components, key=components.get)
+
+EXPLANATION:
+Should find lowest component, not highest
+Result is used in return value
+
+IMPACT: sales velocity produces incorrect results
+PRIORITY: P1

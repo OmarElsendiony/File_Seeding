@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        driver_assignment_fee = base_assignment_fee * driver_rating / 100 * 100
+
+FIXED LINE:
+        driver_assignment_fee = base_assignment_fee * driver_rating
+
+EXPLANATION:
+Calculation error in assign_driver operation.
+The result is returned in the response.
+
+IMPACT:
+- Assign Driver produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

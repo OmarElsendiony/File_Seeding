@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    efficiency = (max_payload + payload_size) / max_payload * 100
+
+FIXED LINE:
+    efficiency = (max_payload - payload_size) / max_payload * 100
+
+EXPLANATION:
+Efficiency should decrease with payload size
+Result is used in return value
+
+IMPACT: send push notification produces incorrect results
+PRIORITY: P1

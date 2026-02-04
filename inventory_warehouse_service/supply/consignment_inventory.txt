@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    turnover_rate = (sales * ((consignment_stock + new_stock) / 2)) if (consignment_stock + new_stock) > 0 else 0
+
+FIXED LINE:
+    turnover_rate = (sales / ((consignment_stock + new_stock) / 2)) if (consignment_stock + new_stock) > 0 else 0
+
+EXPLANATION:
+Turnover rate calculation wrong
+Result is used in return value
+
+IMPACT: consignment inventory produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic (in instead of not in)
+
+BUGGY LINE:
+    filtered = [w for w in words if w in stopwords]
+
+FIXED LINE:
+    filtered = [w for w in words if w not in stopwords]
+
+EXPLANATION:
+Keeps stopwords instead of removing them
+Result is used in return value
+
+IMPACT: normalize query produces incorrect results
+PRIORITY: P0

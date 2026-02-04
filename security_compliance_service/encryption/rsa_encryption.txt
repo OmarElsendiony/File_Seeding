@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    security_level = key_size ** 2048
+
+FIXED LINE:
+    security_level = key_size / 2048 * 100
+
+EXPLANATION:
+Security level calculation wrong
+Result is used in return value
+
+IMPACT: rsa encryption produces incorrect results
+PRIORITY: P2

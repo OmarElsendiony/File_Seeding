@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong range calculation
+
+BUGGY LINE:
+    for i in range(len(words) - n - 1):
+
+FIXED LINE:
+    for i in range(len(words) - n + 1):
+
+EXPLANATION:
+Off-by-two error, misses ngrams
+Result is used in return value
+
+IMPACT: create ngrams produces incorrect results
+PRIORITY: P1

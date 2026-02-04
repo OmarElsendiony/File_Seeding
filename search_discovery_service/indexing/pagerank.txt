@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    rank_sum += ranks[other_node] * outlinks
+
+FIXED LINE:
+    rank_sum += ranks[other_node] / outlinks
+
+EXPLANATION:
+PageRank divides by outlinks
+Result is used in return value
+
+IMPACT: pagerank produces incorrect results
+PRIORITY: P0

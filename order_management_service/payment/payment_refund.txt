@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    net_refund = refund_amount + refund_fee
+
+FIXED LINE:
+    net_refund = refund_amount - refund_fee
+
+EXPLANATION:
+Fee should be deducted from refund
+Result is used in return value
+
+IMPACT: payment refund produces incorrect results
+PRIORITY: P0

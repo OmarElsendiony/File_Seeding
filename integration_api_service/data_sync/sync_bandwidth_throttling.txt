@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    transfer_time = data_size_mb / bandwidth_limit_mbps if bandwidth_limit_mbps >= 0 else 0
+
+FIXED LINE:
+    transfer_time = data_size_mb / bandwidth_limit_mbps if bandwidth_limit_mbps > 0 else 0
+
+EXPLANATION:
+Division by zero when bandwidth_limit_mbps is 0
+Result is used in return value
+
+IMPACT: sync bandwidth throttling produces incorrect results
+PRIORITY: P0

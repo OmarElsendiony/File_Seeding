@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= instead of <)
+
+BUGGY LINE:
+    if distance <= min_distance:
+
+FIXED LINE:
+    if distance < min_distance:
+
+EXPLANATION:
+May not find true minimum
+Result is used in return value
+
+IMPACT: distribution network produces incorrect results
+PRIORITY: P3

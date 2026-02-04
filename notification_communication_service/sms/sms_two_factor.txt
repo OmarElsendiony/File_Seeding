@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong exponentiation order
+
+BUGGY LINE:
+    security_level = code_length ** 10
+
+FIXED LINE:
+    security_level = 10 ** code_length
+
+EXPLANATION:
+Security level calculation wrong
+Result is used in return value
+
+IMPACT: sms two factor produces incorrect results
+PRIORITY: P2

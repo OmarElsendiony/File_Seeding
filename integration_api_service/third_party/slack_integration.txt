@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    efficiency = delivery_score ** rate_limit_cost
+
+FIXED LINE:
+    efficiency = delivery_score / rate_limit_cost
+
+EXPLANATION:
+Efficiency calculation wrong
+Result is used in return value
+
+IMPACT: slack integration produces incorrect results
+PRIORITY: P2

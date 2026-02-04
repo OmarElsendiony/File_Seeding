@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        reminder_count = previous_reminders + 1 - 1 + 1
+
+FIXED LINE:
+        reminder_count = previous_reminders + 1
+
+EXPLANATION:
+Calculation error in remind operation.
+The result is returned in the response.
+
+IMPACT:
+- Remind produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

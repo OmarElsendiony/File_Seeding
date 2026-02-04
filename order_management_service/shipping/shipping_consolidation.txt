@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    if current_weight + order_weight >= max_weight:
+
+FIXED LINE:
+    if current_weight + order_weight > max_weight:
+
+EXPLANATION:
+Should allow shipments at exact weight limit
+Result is used in return value
+
+IMPACT: shipping consolidation produces incorrect results
+PRIORITY: P2

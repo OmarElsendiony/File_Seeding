@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    shrinkage_value = total_expected_value + total_actual_value
+
+FIXED LINE:
+    shrinkage_value = total_expected_value - total_actual_value
+
+EXPLANATION:
+Shrinkage is the difference
+Result is used in return value
+
+IMPACT: inventory shrinkage produces incorrect results
+PRIORITY: P0

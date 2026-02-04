@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    predicted = slope * x - intercept
+
+FIXED LINE:
+    predicted = slope * x + intercept
+
+EXPLANATION:
+Linear regression formula requires addition
+Result is used in return value
+
+IMPACT: revenue forecast produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    z_actual = (current_stock + lead_time_demand) / lead_time_std if lead_time_std > 0 else 0
+
+FIXED LINE:
+    z_actual = (current_stock - lead_time_demand) / lead_time_std if lead_time_std > 0 else 0
+
+EXPLANATION:
+Z-score calculation wrong
+Result is used in return value
+
+IMPACT: stockout prevention produces incorrect results
+PRIORITY: P0

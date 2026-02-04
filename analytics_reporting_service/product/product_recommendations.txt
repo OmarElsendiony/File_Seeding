@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition and subtraction cancel out
+
+BUGGY LINE:
+    total_score = relevance_score + popularity / 100 + rating - rating
+
+FIXED LINE:
+    total_score = relevance_score + popularity / 100 + rating
+
+EXPLANATION:
+Rating not contributing to score
+Result is used in return value
+
+IMPACT: product recommendations produces incorrect results
+PRIORITY: P1

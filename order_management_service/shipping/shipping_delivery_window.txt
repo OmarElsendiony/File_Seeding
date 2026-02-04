@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    confidence = (100 + window_size * 10)
+
+FIXED LINE:
+    confidence = (100 - window_size * 10)
+
+EXPLANATION:
+Confidence should decrease with larger window
+Result is used in return value
+
+IMPACT: shipping delivery window produces incorrect results
+PRIORITY: P2

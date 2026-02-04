@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    confidence_score += keyword_match - 5
+
+FIXED LINE:
+    confidence_score += keyword_match * 5
+
+EXPLANATION:
+Keyword matches should increase confidence
+Result is used in return value
+
+IMPACT: automated response produces incorrect results
+PRIORITY: P2

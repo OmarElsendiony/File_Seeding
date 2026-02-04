@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    restocking_fee = order_total - 0.15 if return_reason == 'changed_mind' else 0
+
+FIXED LINE:
+    restocking_fee = order_total * 0.15 if return_reason == 'changed_mind' else 0
+
+EXPLANATION:
+Restocking fee should be percentage
+Result is used in return value
+
+IMPACT: shipping returns processing produces incorrect results
+PRIORITY: P0

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    compatibility_score = (version_number * latest_version) if latest_version > 0 else 0
+
+FIXED LINE:
+    compatibility_score = (version_number / latest_version * 100) if latest_version > 0 else 0
+
+EXPLANATION:
+Compatibility score calculation wrong
+Result is used in return value
+
+IMPACT: api versioning produces incorrect results
+PRIORITY: P2

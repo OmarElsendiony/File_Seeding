@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    sla_compliance = (sla_met * 100 / total_tickets) if total_tickets > 0 else 0
+
+FIXED LINE:
+    sla_compliance = (sla_met / total_tickets * 100) if total_tickets > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: support tickets produces incorrect results
+PRIORITY: P2

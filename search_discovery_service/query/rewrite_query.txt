@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: remove() instead of append()
+
+BUGGY LINE:
+    rules_applied.remove(pattern)
+
+FIXED LINE:
+    rules_applied.append(pattern)
+
+EXPLANATION:
+Should add to list, not remove
+Result is used in return value
+
+IMPACT: rewrite query produces incorrect results
+PRIORITY: P0

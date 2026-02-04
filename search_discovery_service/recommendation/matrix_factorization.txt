@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong confidence calculation
+
+BUGGY LINE:
+    confidence = (user_norm * item_norm) ** 0.5
+
+FIXED LINE:
+    confidence = (user_norm + item_norm) / 2
+
+EXPLANATION:
+Should use average or product, not sqrt of product
+Result is used in return value
+
+IMPACT: matrix factorization produces incorrect results
+PRIORITY: P2

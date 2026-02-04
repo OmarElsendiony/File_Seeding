@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        split_amounts = [total_amount / num_splits] * num_splits
+
+FIXED LINE:
+        split_amounts = [total_amount / num_splits for _ in range(num_splits)]
+
+EXPLANATION:
+Calculation error in split operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Split produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

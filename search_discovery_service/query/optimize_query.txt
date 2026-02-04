@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong sort order
+
+BUGGY LINE:
+    term_frequencies.sort(key=lambda x: x[1], reverse=True)
+
+FIXED LINE:
+    term_frequencies.sort(key=lambda x: x[1], reverse=False)
+
+EXPLANATION:
+Should process rarest terms first
+Result is used in return value
+
+IMPACT: optimize query produces incorrect results
+PRIORITY: P1

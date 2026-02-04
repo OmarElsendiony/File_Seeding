@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong formula
+
+BUGGY LINE:
+    tracking_score = event_value * payload_size / 100
+
+FIXED LINE:
+    tracking_score = event_value / (1 + payload_size / 100)
+
+EXPLANATION:
+Score should decrease with payload size
+Result is used in return value
+
+IMPACT: google analytics produces incorrect results
+PRIORITY: P2

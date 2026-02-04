@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    accuracy = (1 + abs(discrepancy) / (system + 1)) * 100
+
+FIXED LINE:
+    accuracy = (1 - abs(discrepancy) / (system + 1)) * 100
+
+EXPLANATION:
+Accuracy should decrease with discrepancy
+Result is used in return value
+
+IMPACT: count stock produces incorrect results
+PRIORITY: P1

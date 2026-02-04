@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (< instead of >=)
+
+BUGGY LINE:
+    if support < min_support:
+
+FIXED LINE:
+    if support >= min_support:
+
+EXPLANATION:
+Filters wrong bundles
+Result is used in return value
+
+IMPACT: product bundling produces incorrect results
+PRIORITY: P1

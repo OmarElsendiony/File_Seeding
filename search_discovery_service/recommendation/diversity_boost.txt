@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    diversity_penalty = category_count / diversity_weight
+
+FIXED LINE:
+    diversity_penalty = category_count * diversity_weight
+
+EXPLANATION:
+Penalty should increase with weight
+Result is used in return value
+
+IMPACT: diversity boost produces incorrect results
+PRIORITY: P1

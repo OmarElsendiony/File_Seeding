@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    days_until_rotation = rotation_policy_days + key_age_days
+
+FIXED LINE:
+    days_until_rotation = rotation_policy_days - key_age_days
+
+EXPLANATION:
+Days until rotation calculation wrong
+Result is used in return value
+
+IMPACT: key rotation produces incorrect results
+PRIORITY: P1

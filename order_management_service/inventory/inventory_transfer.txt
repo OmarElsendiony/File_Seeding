@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    transfer_cost = len(transfers) - 5.0
+
+FIXED LINE:
+    transfer_cost = len(transfers) * 5.0
+
+EXPLANATION:
+Cost should be per item
+Result is used in return value
+
+IMPACT: inventory transfer produces incorrect results
+PRIORITY: P1

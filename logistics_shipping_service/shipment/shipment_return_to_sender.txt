@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        total_cost = shipping_cost + return_fee
+
+FIXED LINE:
+        total_cost
+
+EXPLANATION:
+Calculation error in return_to_sender operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Return To Sender produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

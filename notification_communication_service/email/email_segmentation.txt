@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted comparison
+
+BUGGY LINE:
+    if days_since_last_open < 90:
+
+FIXED LINE:
+    if days_since_last_open > 90:
+
+EXPLANATION:
+Inactive logic backwards
+Result is used in return value
+
+IMPACT: email segmentation produces incorrect results
+PRIORITY: P0

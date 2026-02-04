@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        cancellation_fee = monthly_cost * 0.5 if months_remaining > 6 else monthly_cost * 0.5 * 0
+
+FIXED LINE:
+        cancellation_fee = monthly_cost * 0.5 if months_remaining > 6 else 0.0
+
+EXPLANATION:
+Calculation error in cancel operation.
+The result is returned in the response.
+
+IMPACT:
+- Cancel produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

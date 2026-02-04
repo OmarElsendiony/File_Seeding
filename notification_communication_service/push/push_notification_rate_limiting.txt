@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    remaining = max_per_day + sent_today
+
+FIXED LINE:
+    remaining = max_per_day - sent_today
+
+EXPLANATION:
+Remaining count wrong
+Result is used in return value
+
+IMPACT: push notification rate limiting produces incorrect results
+PRIORITY: P1

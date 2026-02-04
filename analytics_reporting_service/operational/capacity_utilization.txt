@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    utilization_rate = (avg_output * 100 / max_capacity) if max_capacity > 0 else 0
+
+FIXED LINE:
+    utilization_rate = (avg_output / max_capacity * 100) if max_capacity > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: capacity utilization produces incorrect results
+PRIORITY: P2

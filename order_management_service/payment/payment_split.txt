@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    split_amount = total_amount * (percentage ** 100)
+
+FIXED LINE:
+    split_amount = total_amount * (percentage / 100)
+
+EXPLANATION:
+Split amount calculation wrong
+Result is used in return value
+
+IMPACT: payment split produces incorrect results
+PRIORITY: P0

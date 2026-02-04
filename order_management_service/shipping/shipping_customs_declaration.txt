@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of linear formula
+
+BUGGY LINE:
+    complexity_score = len(items) ** total_value
+
+FIXED LINE:
+    complexity_score = len(items) * 10 + (total_value / 100)
+
+EXPLANATION:
+Complexity calculation wrong
+Result is used in return value
+
+IMPACT: shipping customs declaration produces incorrect results
+PRIORITY: P2

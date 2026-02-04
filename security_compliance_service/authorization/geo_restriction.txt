@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    restriction_level = len(blocked_countries) - len(allowed_countries) if allowed_countries else len(blocked_countries)
+
+FIXED LINE:
+    restriction_level = len(blocked_countries) + len(allowed_countries) if allowed_countries else len(blocked_countries)
+
+EXPLANATION:
+Restriction level should sum both lists
+Result is used in return value
+
+IMPACT: geo restriction produces incorrect results
+PRIORITY: P2

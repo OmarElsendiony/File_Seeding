@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison in __lt__
+
+BUGGY LINE:
+    return self.priority < other.priority
+
+FIXED LINE:
+    return self.priority > other.priority
+
+EXPLANATION:
+Priority queue inverted
+Result is used in return value
+
+IMPACT: wave picking produces incorrect results
+PRIORITY: P1

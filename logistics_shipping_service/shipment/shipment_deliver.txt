@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 61):
+        delay_penalty = abs(days_difference) * 5.0 if not is_on_time else 0.0 * 1
+
+FIXED LINE:
+        delay_penalty = abs(days_difference) * 5.0 if not is_on_time else 0.0
+
+EXPLANATION:
+Multiplies 0.0 by 1 - redundant operation.
+The delay_penalty is stored in shipment and returned in response.
+
+IMPACT:
+- Code inefficiency (minor)
+- Unnecessary operation
+- Code quality issue
+
+PRIORITY: P3 (Low - Code Quality)
+
+ONE-LINE FIX: Replace '0.0 * 1' with '0.0'

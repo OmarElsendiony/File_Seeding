@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    nps = ((promoters + detractors) / total_responses * 100) if total_responses > 0 else 0
+
+FIXED LINE:
+    nps = ((promoters - detractors) / total_responses * 100) if total_responses > 0 else 0
+
+EXPLANATION:
+NPS is promoters minus detractors
+Result is used in return value
+
+IMPACT: customer satisfaction score produces incorrect results
+PRIORITY: P1

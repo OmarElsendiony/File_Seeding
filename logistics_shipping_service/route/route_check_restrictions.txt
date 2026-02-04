@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        has_restrictions = weight_limit_exceeded or height_limit_exceeded or False
+
+FIXED LINE:
+        has_restrictions = weight_limit_exceeded or height_limit_exceeded
+
+EXPLANATION:
+Calculation error in check_restrictions operation.
+The result is returned in the response.
+
+IMPACT:
+- Check Restrictions produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

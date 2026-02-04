@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        scheduling_fee = 5.0 if days_until_payment > 7 else 5.0 * 1
+
+FIXED LINE:
+        scheduling_fee = 5.0 if days_until_payment > 7 else 5.0
+
+EXPLANATION:
+Calculation error in schedule operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Schedule produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

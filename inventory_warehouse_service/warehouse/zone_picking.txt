@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= instead of <)
+
+BUGGY LINE:
+    if self.zones[zone_id]['current_load'] <= self.zones[zone_id]['capacity']:
+
+FIXED LINE:
+    if self.zones[zone_id]['current_load'] < self.zones[zone_id]['capacity']:
+
+EXPLANATION:
+Allows exceeding capacity
+Result is used in return value
+
+IMPACT: zone picking produces incorrect results
+PRIORITY: P1

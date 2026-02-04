@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    lcl = max(0, mean_lead_time + 3 * std_dev)
+
+FIXED LINE:
+    lcl = max(0, mean_lead_time - 3 * std_dev)
+
+EXPLANATION:
+Lower control limit calculation wrong
+Result is used in return value
+
+IMPACT: lead time analysis produces incorrect results
+PRIORITY: P0

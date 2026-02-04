@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        allocated_shipments = max_capacity if demand <= max_capacity else max_capacity + 1
+
+FIXED LINE:
+        allocated_shipments = min(demand, max_capacity)
+
+EXPLANATION:
+Calculation error in allocate operation.
+The result is returned in the response.
+
+IMPACT:
+- Allocate produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

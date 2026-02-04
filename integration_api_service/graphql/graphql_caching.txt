@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= instead of <)
+
+BUGGY LINE:
+    if age <= 300:
+
+FIXED LINE:
+    if age < 300:
+
+EXPLANATION:
+Cache expires too early
+Result is used in return value
+
+IMPACT: graphql caching produces incorrect results
+PRIORITY: P3

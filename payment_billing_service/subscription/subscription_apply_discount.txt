@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        discounted_price = subscription_price - (subscription_price * discount_rate / 100) * 2
+
+FIXED LINE:
+        discounted_price = subscription_price - (subscription_price * discount_rate / 100)
+
+EXPLANATION:
+Calculation error in apply_discount operation.
+The result is returned in the response.
+
+IMPACT:
+- Apply Discount produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

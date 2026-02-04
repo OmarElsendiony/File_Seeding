@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    utilization = ((current_allocated + required_space) * 100 / self.total_space)
+
+FIXED LINE:
+    utilization = ((current_allocated + required_space) / self.total_space * 100)
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: allocate space produces incorrect results
+PRIORITY: P2

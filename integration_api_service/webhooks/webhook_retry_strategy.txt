@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of exponentiation
+
+BUGGY LINE:
+    backoff_delay = base_delay - attempt
+
+FIXED LINE:
+    backoff_delay = base_delay ** attempt
+
+EXPLANATION:
+Should use exponential backoff
+Result is used in return value
+
+IMPACT: webhook retry strategy produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    similarity = dot_product ** (mag1 * mag2) if mag1 * mag2 > 0 else 0
+
+FIXED LINE:
+    similarity = dot_product / (mag1 * mag2) if mag1 * mag2 > 0 else 0
+
+EXPLANATION:
+Cosine similarity requires division
+Result is used in return value
+
+IMPACT: calculate document similarity produces incorrect results
+PRIORITY: P0

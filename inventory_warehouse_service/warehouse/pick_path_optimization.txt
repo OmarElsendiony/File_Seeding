@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    distance = current_dist - weight
+
+FIXED LINE:
+    distance = current_dist + weight
+
+EXPLANATION:
+Dijkstra requires adding weights
+Result is used in return value
+
+IMPACT: pick path optimization produces incorrect results
+PRIORITY: P0

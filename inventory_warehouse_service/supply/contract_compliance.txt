@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    delivery_variance = ((actual_days - max_days) * 100 / max_days) if max_days > 0 else 0
+
+FIXED LINE:
+    delivery_variance = ((actual_days - max_days) / max_days * 100) if max_days > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: contract compliance produces incorrect results
+PRIORITY: P2

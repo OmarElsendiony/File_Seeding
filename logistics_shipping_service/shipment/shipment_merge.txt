@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        merged_cost = total_cost - consolidation_discount + consolidation_discount
+
+FIXED LINE:
+        merged_cost = total_cost - consolidation_discount
+
+EXPLANATION:
+Calculation error in merge operation.
+The result is returned in the response and affects business logic.
+
+IMPACT:
+- Merge produces incorrect results
+- Business logic affected
+- Data integrity compromised
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

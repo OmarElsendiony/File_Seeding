@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    team_attainment = (total_actual * 100 / total_quota) if total_quota > 0 else 0
+
+FIXED LINE:
+    team_attainment = (total_actual / total_quota * 100) if total_quota > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: quota attainment produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    total_components = len(phrases) - len(must_have) - len(must_not) - len(terms)
+
+FIXED LINE:
+    total_components = len(phrases) + len(must_have) + len(must_not) + len(terms)
+
+EXPLANATION:
+Should sum all components
+Result is used in return value
+
+IMPACT: parse query produces incorrect results
+PRIORITY: P1

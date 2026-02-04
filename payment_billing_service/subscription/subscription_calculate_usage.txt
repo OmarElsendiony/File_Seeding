@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        usage_cost = base_usage_cost * usage_units / 100 * 100
+
+FIXED LINE:
+        usage_cost = base_usage_cost * usage_units
+
+EXPLANATION:
+Calculation error in calculate_usage operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Usage produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

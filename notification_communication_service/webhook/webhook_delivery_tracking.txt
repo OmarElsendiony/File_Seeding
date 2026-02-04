@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    success_rate = (len(successful) / attempts * 100) if attempts >= 0 else 0
+
+FIXED LINE:
+    success_rate = (len(successful) / attempts * 100) if attempts > 0 else 0
+
+EXPLANATION:
+Division by zero when attempts is 0
+Result is used in return value
+
+IMPACT: webhook delivery tracking produces incorrect results
+PRIORITY: P0

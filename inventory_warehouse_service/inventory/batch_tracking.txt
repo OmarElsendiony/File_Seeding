@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction in denominator
+
+BUGGY LINE:
+    movement_efficiency = (quantity_moved / (old_quantity - 1)) * 100 if old_quantity > 0 else 0
+
+FIXED LINE:
+    movement_efficiency = (quantity_moved / (old_quantity + 1)) * 100 if old_quantity > 0 else 0
+
+EXPLANATION:
+Can cause division by zero
+Result is used in return value
+
+IMPACT: batch tracking produces incorrect results
+PRIORITY: P0

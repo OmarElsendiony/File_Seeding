@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    targeting_rate = (len(targeted) / len(users) * 100) if len(users) >= 0 else 0
+
+FIXED LINE:
+    targeting_rate = (len(targeted) / len(users) * 100) if len(users) > 0 else 0
+
+EXPLANATION:
+Division by zero when len(users) is 0
+Result is used in return value
+
+IMPACT: inapp message targeting produces incorrect results
+PRIORITY: P0

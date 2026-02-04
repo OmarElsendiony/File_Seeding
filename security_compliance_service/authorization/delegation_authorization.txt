@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of multiplication
+
+BUGGY LINE:
+    delegation_strength = len(permissions) + time_remaining / 3600
+
+FIXED LINE:
+    delegation_strength = len(permissions) * (time_remaining / 3600)
+
+EXPLANATION:
+Delegation strength formula wrong
+Result is used in return value
+
+IMPACT: delegation authorization produces incorrect results
+PRIORITY: P2

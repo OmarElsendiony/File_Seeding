@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    score = (velocity - accessibility) / size
+
+FIXED LINE:
+    score = (velocity * accessibility) / size
+
+EXPLANATION:
+Score should combine factors positively
+Result is used in return value
+
+IMPACT: slotting optimization produces incorrect results
+PRIORITY: P1

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    failure_probability = 1 + math.exp(-((usage_hours / scale) ** shape))
+
+FIXED LINE:
+    failure_probability = 1 - math.exp(-((usage_hours / scale) ** shape))
+
+EXPLANATION:
+Weibull CDF calculation wrong
+Result is used in return value
+
+IMPACT: predictive maintenance produces incorrect results
+PRIORITY: P0

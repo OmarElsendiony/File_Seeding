@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    match_rate = (len(matches) * 100 / total_candidates) if total_candidates > 0 else 0
+
+FIXED LINE:
+    match_rate = (len(matches) / total_candidates * 100) if total_candidates > 0 else 0
+
+EXPLANATION:
+Multiplying by 100 before division changes result
+Result is used in return value
+
+IMPACT: wildcard search produces incorrect results
+PRIORITY: P1

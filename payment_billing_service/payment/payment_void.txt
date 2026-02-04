@@ -1,0 +1,21 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 33):
+        void_fee = 1.0 if current_status == 'AUTHORIZED' else 1.0 * 0
+
+FIXED LINE:
+        void_fee = 1.0 if current_status == 'AUTHORIZED' else 0.0
+
+EXPLANATION:
+Multiplies by 0 instead of using 0.0 directly - inefficient.
+The void_fee is stored in authorization and returned in response.
+
+IMPACT:
+- Code inefficiency (minor)
+- Unnecessary operation
+- Code quality issue
+
+PRIORITY: P3 (Low - Code Quality)
+
+ONE-LINE FIX: Replace '1.0 * 0' with '0.0'

@@ -1,0 +1,8 @@
+BUG: Line 25 - Wrong operation order
+    quality = efficiency + time_value * 100
+FIX:
+    quality = (efficiency + time_value) * 100
+    OR: quality = efficiency + (time_value * 100)
+EXPLANATION: Multiplication happens before addition, unexpected precedence
+IMPACT: Quality calculation incorrect
+PRIORITY: P1

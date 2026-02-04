@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong slice (takes everything AFTER max_suggestions)
+
+BUGGY LINE:
+    top_suggestions = suggestions[max_suggestions:]
+
+FIXED LINE:
+    top_suggestions = suggestions[:max_suggestions]
+
+EXPLANATION:
+Should take first max_suggestions items
+Result is used in return value
+
+IMPACT: suggest corrections produces incorrect results
+PRIORITY: P0

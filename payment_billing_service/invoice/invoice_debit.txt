@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        debit_amount = additional_charges - discount + discount
+
+FIXED LINE:
+        debit_amount = additional_charges - discount
+
+EXPLANATION:
+Calculation error in debit operation.
+The result is returned in the response.
+
+IMPACT:
+- Debit produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

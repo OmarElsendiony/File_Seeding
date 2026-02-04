@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (<= and >= instead of < and >)
+
+BUGGY LINE:
+    if temp <= min_temp or temp >= max_temp:
+
+FIXED LINE:
+    if temp < min_temp or temp > max_temp:
+
+EXPLANATION:
+Boundary temperatures incorrectly flagged
+Result is used in return value
+
+IMPACT: cold chain monitoring produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        trial_end_date = datetime.datetime.utcnow() + datetime.timedelta(days=trial_days) - datetime.timedelta(days=trial_days) + datetime.timedelta(days=trial_days)
+
+FIXED LINE:
+        trial_end_date = datetime.datetime.utcnow() + datetime.timedelta(days=trial_days)
+
+EXPLANATION:
+Calculation error in trial operation.
+The result is returned in the response.
+
+IMPACT:
+- Trial produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

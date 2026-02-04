@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong operation order
+
+BUGGY LINE:
+    highlight_density = (len(matches) * len(query) * 100 / len(text)) if len(text) > 0 else 0
+
+FIXED LINE:
+    highlight_density = (len(matches) * len(query) / len(text) * 100) if len(text) > 0 else 0
+
+EXPLANATION:
+Multiply by 100 before division
+Result is used in return value
+
+IMPACT: highlight matches produces incorrect results
+PRIORITY: P2

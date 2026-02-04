@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    security_score = (100 + whitelist_size * 5)
+
+FIXED LINE:
+    security_score = (100 - whitelist_size * 5)
+
+EXPLANATION:
+Larger whitelist should reduce security
+Result is used in return value
+
+IMPACT: ip whitelist produces incorrect results
+PRIORITY: P2

@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of addition
+
+BUGGY LINE:
+    reorder_point = avg_daily_sales * (lead_time_days - safety_stock_days)
+
+FIXED LINE:
+    reorder_point = avg_daily_sales * (lead_time_days + safety_stock_days)
+
+EXPLANATION:
+Safety stock should be added to lead time
+Result is used in return value
+
+IMPACT: inventory reorder point produces incorrect results
+PRIORITY: P1

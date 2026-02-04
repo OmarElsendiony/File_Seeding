@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    availability_score = (capacity + workload) / capacity * 100
+
+FIXED LINE:
+    availability_score = (capacity - workload) / capacity * 100
+
+EXPLANATION:
+Availability should decrease with workload
+Result is used in return value
+
+IMPACT: support ticket routing produces incorrect results
+PRIORITY: P1

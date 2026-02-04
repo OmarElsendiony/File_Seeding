@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    confidence_interval = 1.96 / std_dev
+
+FIXED LINE:
+    confidence_interval = 1.96 * std_dev
+
+EXPLANATION:
+Confidence interval calculation wrong
+Result is used in return value
+
+IMPACT: customs clearance produces incorrect results
+PRIORITY: P1

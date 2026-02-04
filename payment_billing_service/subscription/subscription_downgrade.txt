@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        downgrade_credit = current_tier_cost - new_tier_cost - proration + proration
+
+FIXED LINE:
+        downgrade_credit = current_tier_cost - new_tier_cost - proration
+
+EXPLANATION:
+Calculation error in downgrade operation.
+The result is returned in the response.
+
+IMPACT:
+- Downgrade produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

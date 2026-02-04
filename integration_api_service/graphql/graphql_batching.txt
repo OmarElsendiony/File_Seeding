@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong division order
+
+BUGGY LINE:
+    batch_efficiency = (total_queries * 100 / 10) if total_queries > 0 else 0
+
+FIXED LINE:
+    batch_efficiency = (10 / total_queries * 100) if total_queries > 0 else 0
+
+EXPLANATION:
+Efficiency should decrease with more queries
+Result is used in return value
+
+IMPACT: graphql batching produces incorrect results
+PRIORITY: P2

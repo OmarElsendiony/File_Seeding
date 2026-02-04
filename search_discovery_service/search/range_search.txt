@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exclusive instead of inclusive comparison
+
+BUGGY LINE:
+    matches = [item for item in items if min_val < item.get(field, 0) < max_val]
+
+FIXED LINE:
+    matches = [item for item in items if min_val <= item.get(field, 0) <= max_val]
+
+EXPLANATION:
+Should include boundary values
+Result is used in return value
+
+IMPACT: range search produces incorrect results
+PRIORITY: P1

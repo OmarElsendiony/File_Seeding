@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        tax_amount = subtotal * tax_rate / 100 + subtotal * 0
+
+FIXED LINE:
+        tax_amount = subtotal * tax_rate / 100
+
+EXPLANATION:
+Calculation error in apply_tax operation.
+The result is returned in the response.
+
+IMPACT:
+- Apply Tax produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

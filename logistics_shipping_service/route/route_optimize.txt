@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        optimized_time = original_time * efficiency_factor / 100 * 100
+
+FIXED LINE:
+        optimized_time = original_time * efficiency_factor
+
+EXPLANATION:
+Calculation error in optimize operation.
+The result is returned in the response.
+
+IMPACT:
+- Optimize produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

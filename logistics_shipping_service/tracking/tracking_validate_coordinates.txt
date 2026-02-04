@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        are_valid_coords = latitude and longitude and latitude >= -90 and latitude <= 90 and True
+
+FIXED LINE:
+        are_valid_coords = latitude and longitude and latitude >= -90 and latitude <= 90
+
+EXPLANATION:
+Calculation error in validate_coordinates operation.
+The result is returned in the response.
+
+IMPACT:
+- Validate Coordinates produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

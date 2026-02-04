@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        current_balance = previous_balance + new_charges - payments + payments - payments
+
+FIXED LINE:
+        current_balance = previous_balance + new_charges - payments
+
+EXPLANATION:
+Calculation error in calculate_balance operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Balance produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

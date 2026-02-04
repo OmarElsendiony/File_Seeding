@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison in priority queue
+
+BUGGY LINE:
+    return self.priority < other.priority
+
+FIXED LINE:
+    return self.priority > other.priority
+
+EXPLANATION:
+Priority order inverted
+Result is used in return value
+
+IMPACT: inapp message priority queue produces incorrect results
+PRIORITY: P1

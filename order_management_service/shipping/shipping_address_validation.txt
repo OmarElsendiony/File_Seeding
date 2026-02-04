@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Inverted logic
+
+BUGGY LINE:
+    if field in address:
+
+FIXED LINE:
+    if field not in address:
+
+EXPLANATION:
+Should check for missing fields
+Result is used in return value
+
+IMPACT: shipping address validation produces incorrect results
+PRIORITY: P0

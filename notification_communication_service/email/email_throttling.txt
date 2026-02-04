@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    total_time = total_batches - time_window
+
+FIXED LINE:
+    total_time = total_batches * time_window
+
+EXPLANATION:
+Total time calculation wrong
+Result is used in return value
+
+IMPACT: email throttling produces incorrect results
+PRIORITY: P0

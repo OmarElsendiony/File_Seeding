@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Division instead of multiplication
+
+BUGGY LINE:
+    contextual_score = base_score / (1 + context_match / 100)
+
+FIXED LINE:
+    contextual_score = base_score * (1 + context_match / 100)
+
+EXPLANATION:
+Context match should boost score
+Result is used in return value
+
+IMPACT: contextual recommend produces incorrect results
+PRIORITY: P1

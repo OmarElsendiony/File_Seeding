@@ -1,0 +1,7 @@
+BUG: Line 52 - Wrong operator in denominator
+    efficiency = (new_stock / (current - 1)) * 100 if current >= 0 else 100
+FIX:
+    efficiency = (new_stock / (current + 1)) * 100 if current >= 0 else 100
+EXPLANATION: Subtraction creates negative/zero denominator risk
+IMPACT: Division by zero or negative efficiency values
+PRIORITY: P0

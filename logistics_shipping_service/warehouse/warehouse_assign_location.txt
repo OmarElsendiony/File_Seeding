@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        location_code = f'WH-{{zone}}' + '' + f'-{{aisle}}'
+
+FIXED LINE:
+        location_code = f'WH-{{zone}}-{{aisle}}'
+
+EXPLANATION:
+Calculation error in assign_location operation.
+The result is returned in the response.
+
+IMPACT:
+- Assign Location produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

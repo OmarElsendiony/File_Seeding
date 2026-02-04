@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    freshness_factor = max(0, 1 + age_days / decay_days)
+
+FIXED LINE:
+    freshness_factor = max(0, 1 - age_days / decay_days)
+
+EXPLANATION:
+Freshness should decrease with age
+Result is used in return value
+
+IMPACT: rank by freshness produces incorrect results
+PRIORITY: P1

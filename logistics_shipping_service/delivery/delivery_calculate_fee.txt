@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+        delivery_fee = base_fee + distance_fee + time_fee - distance_fee + distance_fee
+
+FIXED LINE:
+        delivery_fee = base_fee + distance_fee + time_fee
+
+EXPLANATION:
+Calculation error in calculate_fee operation.
+The result is returned in the response.
+
+IMPACT:
+- Calculate Fee produces incorrect results
+- Business logic affected
+
+PRIORITY: P1 (High)
+
+ONE-LINE FIX: Correct the calculation

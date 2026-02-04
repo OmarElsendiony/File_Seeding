@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Subtraction instead of multiplication
+
+BUGGY LINE:
+    deductible = order_value - 0.1
+
+FIXED LINE:
+    deductible = order_value * 0.1
+
+EXPLANATION:
+Deductible should be percentage of value
+Result is used in return value
+
+IMPACT: shipping insurance produces incorrect results
+PRIORITY: P1

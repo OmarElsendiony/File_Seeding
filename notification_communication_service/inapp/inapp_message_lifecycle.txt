@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Multiplication instead of division
+
+BUGGY LINE:
+    lifecycle_progress = (state_index * len(states) * 100)
+
+FIXED LINE:
+    lifecycle_progress = (state_index / len(states) * 100) if len(states) > 0 else 0
+
+EXPLANATION:
+Progress calculation wrong
+Result is used in return value
+
+IMPACT: inapp message lifecycle produces incorrect results
+PRIORITY: P1

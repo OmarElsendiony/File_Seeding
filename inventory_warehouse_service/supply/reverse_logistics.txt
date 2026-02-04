@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Exponentiation instead of division
+
+BUGGY LINE:
+    distance_efficiency = (1000 ** (total_distance + 1)) * 100
+
+FIXED LINE:
+    distance_efficiency = (1000 / (total_distance + 1)) * 100
+
+EXPLANATION:
+Efficiency calculation wrong
+Result is used in return value
+
+IMPACT: reverse logistics produces incorrect results
+PRIORITY: P1

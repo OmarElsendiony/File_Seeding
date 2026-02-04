@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Addition instead of subtraction
+
+BUGGY LINE:
+    final_price = period_price + discount_amount
+
+FIXED LINE:
+    final_price = period_price - discount_amount
+
+EXPLANATION:
+Discount should reduce price
+Result is used in return value
+
+IMPACT: payment subscription produces incorrect results
+PRIORITY: P0

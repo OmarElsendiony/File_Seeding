@@ -1,0 +1,17 @@
+BUG DESCRIPTION
+===============
+
+BUG: Wrong comparison (>= instead of >)
+
+BUGGY LINE:
+    filtered_words = [w for w in words if w not in stopwords and len(w) >= 2]
+
+FIXED LINE:
+    filtered_words = [w for w in words if w not in stopwords and len(w) > 2]
+
+EXPLANATION:
+Includes 2-letter words which might be too short
+Result is used in return value
+
+IMPACT: extract keywords produces incorrect results
+PRIORITY: P3
