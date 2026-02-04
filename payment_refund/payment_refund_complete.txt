@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+total_refunded = original_amount + refund_amount
+
+FIXED LINE:
+total_refunded = original_amount - refund_amount
+
+EXPLANATION:
+The complete operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects complete operations for payment refunds.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct complete behavior.

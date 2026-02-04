@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 175):
+if refund_amount is None:
+
+FIXED LINE:
+if refund_amount is not None:
+
+EXPLANATION:
+Validation logic is inverted. Should return error when refund_amount IS None (missing),
+but currently returns error when refund_amount is NOT None (present).
+
+IMPACT:
+Critical - Prevents ALL refund initiations from succeeding.
+
+PRIORITY: P0 (Critical Priority)
+
+HOW TO FIX:
+Change line 175 from "if refund_amount is None:" to "if refund_amount is not None:"

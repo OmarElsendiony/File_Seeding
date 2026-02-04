@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 155):
+if capture_amount < remaining_amount:
+
+FIXED LINE:
+if capture_amount > remaining_amount:
+
+EXPLANATION:
+Comparison operator is reversed. Should raise error when capture_amount is GREATER than
+remaining_amount, but currently raises error when it's LESS than remaining amount.
+
+IMPACT:
+Critical - Allows capturing more than authorized amount.
+
+PRIORITY: P0 (Critical Priority)
+
+HOW TO FIX:
+Change line 155 from "if capture_amount < remaining_amount:" to "if capture_amount > remaining_amount:"

@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if status == 'FROZEN':
+
+FIXED LINE:
+if status == 'frozen':
+
+EXPLANATION:
+The unfreeze operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects unfreeze operations for payment accounts.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct unfreeze behavior.

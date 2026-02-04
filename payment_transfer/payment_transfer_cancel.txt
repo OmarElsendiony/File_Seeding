@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 158):
+if status == "PENDING":
+
+FIXED LINE:
+if status == "pending":
+
+EXPLANATION:
+Status comparison uses uppercase but database stores lowercase status values.
+This causes the cancellation check to fail for pending transfers.
+
+IMPACT:
+High - Cannot cancel pending transfers due to case mismatch.
+
+PRIORITY: P1 (High Priority)
+
+HOW TO FIX:
+Change line 158 from 'if status == "PENDING":' to 'if status == "pending":'

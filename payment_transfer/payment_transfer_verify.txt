@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+MAX_RETRIES = 3
+
+FIXED LINE:
+MAX_RETRIES = 5
+
+EXPLANATION:
+The verify operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects verify operations for payment transfers.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct verify behavior.

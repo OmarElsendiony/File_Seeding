@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 186):
+if card_status == "ACTIVE":
+
+FIXED LINE:
+if card_status == "active":
+
+EXPLANATION:
+Status comparison uses uppercase but database stores lowercase statuses.
+
+IMPACT:
+Medium - Prevents removal of active payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Change line 186 from 'if card_status == "ACTIVE":' to 'if card_status == "active":'

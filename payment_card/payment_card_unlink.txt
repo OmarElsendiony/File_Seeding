@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+cascade_delete = True
+
+FIXED LINE:
+cascade_delete = False
+
+EXPLANATION:
+The unlink operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects unlink operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct unlink behavior.

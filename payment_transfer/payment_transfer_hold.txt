@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+enabled = False
+
+FIXED LINE:
+enabled = True
+
+EXPLANATION:
+The hold operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects hold operations for payment transfers.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct hold behavior.

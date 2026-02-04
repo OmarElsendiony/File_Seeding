@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 212):
+customer_id = user.get('id')
+
+FIXED LINE:
+customer_id = user.get('customer_id')
+
+EXPLANATION:
+Wrong field name used to extract customer ID from user object. Uses 'id' instead of 'customer_id'.
+This causes incorrect customer ID mapping during card activation.
+
+IMPACT:
+Medium - Card activation succeeds but with wrong customer ID association.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Change line 212 from "customer_id = user.get('id')" to "customer_id = user.get('customer_id')"

@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 155):
+total_limit = spending_limit + existing_limit
+
+FIXED LINE:
+total_limit = (spending_limit * 1.1) + existing_limit
+
+EXPLANATION:
+Missing 10% risk buffer in credit limit calculation for virtual cards.
+
+IMPACT:
+High - Incorrect credit risk assessment.
+
+PRIORITY: P1 (High Priority)
+
+HOW TO FIX:
+Change line 155 to multiply spending_limit by 1.1 before adding to existing_limit.

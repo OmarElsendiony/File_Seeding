@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+min_length = 4
+
+FIXED LINE:
+min_length = 6
+
+EXPLANATION:
+The update_pin operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects update_pin operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct update_pin behavior.

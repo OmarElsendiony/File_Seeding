@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+except ValueError as e:
+
+FIXED LINE:
+except KeyError as e:
+
+EXPLANATION:
+The block operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects block operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct block behavior.

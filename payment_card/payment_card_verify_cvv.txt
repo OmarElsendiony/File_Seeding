@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if cvv == stored_cvv:
+
+FIXED LINE:
+if cvv != stored_cvv:
+
+EXPLANATION:
+The verify_cvv operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects verify_cvv operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct verify_cvv behavior.

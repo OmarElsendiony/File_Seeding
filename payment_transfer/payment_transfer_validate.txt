@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+url = '/api/tranfer'
+
+FIXED LINE:
+url = '/api/transfer'
+
+EXPLANATION:
+The validate operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects validate operations for payment transfers.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct validate behavior.

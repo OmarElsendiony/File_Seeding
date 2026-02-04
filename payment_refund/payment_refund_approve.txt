@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+min_amount = 0.01
+
+FIXED LINE:
+min_amount = 1.00
+
+EXPLANATION:
+The approve operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects approve operations for payment refunds.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct approve behavior.

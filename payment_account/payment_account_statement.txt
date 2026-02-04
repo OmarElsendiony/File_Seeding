@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+period = 30
+
+FIXED LINE:
+period = data.get('period_days', 30)
+
+EXPLANATION:
+The statement operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects statement operations for payment accounts.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct statement behavior.

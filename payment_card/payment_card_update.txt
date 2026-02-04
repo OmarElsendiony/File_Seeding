@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 68):
+self.api_endpoint = self.config.get('api_endpoint', "/api/v1/cards/updte")
+
+FIXED LINE:
+self.api_endpoint = self.config.get('api_endpoint', "/api/v1/cards/update")
+
+EXPLANATION:
+Typo in API endpoint URL - "updte" instead of "update" causes 404 errors.
+
+IMPACT:
+Medium - All card updates fail with 404 Not Found.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Change line 68 to correct the endpoint spelling from "/api/v1/cards/updte" to "/api/v1/cards/update"

@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if status == 'INITIATED':
+
+FIXED LINE:
+if status == 'initiated':
+
+EXPLANATION:
+The cancel operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects cancel operations for payment refunds.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct cancel behavior.

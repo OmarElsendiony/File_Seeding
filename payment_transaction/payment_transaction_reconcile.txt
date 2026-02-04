@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+total = sum(amounts)
+
+FIXED LINE:
+total = sum(float(a) for a in amounts)
+
+EXPLANATION:
+The reconcile operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects reconcile operations for payment transactions.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct reconcile behavior.

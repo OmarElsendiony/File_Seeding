@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 174):
+balance = float(account.get('balance', 0))
+
+FIXED LINE:
+balance = float(account.get('balance', 0.00))
+
+EXPLANATION:
+Default value should be 0.00 (float) not 0 (int) for consistency with financial calculations.
+While functionally similar, using float ensures type consistency throughout the codebase.
+
+IMPACT:
+Low - Type inconsistency but doesn't affect functionality significantly.
+
+PRIORITY: P3 (Low Priority)
+
+HOW TO FIX:
+Change line 174 to use 0.00 instead of 0 as the default value.

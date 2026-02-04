@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 363):
+authorization_data['capture'] = False
+
+FIXED LINE:
+authorization_data['captured'] = False
+
+EXPLANATION:
+Wrong field name used for tracking capture status. Should be 'captured' not 'capture'.
+This causes issues when querying for uncaptured authorizations.
+
+IMPACT:
+Medium - Field name inconsistency affects capture tracking queries.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Change line 363 from "authorization_data['capture'] = False" to "authorization_data['captured'] = False"

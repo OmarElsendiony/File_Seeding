@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+status = 'withdrawn'
+
+FIXED LINE:
+status = 'closed'
+
+EXPLANATION:
+The withdraw operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects withdraw operations for payment disputes.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct withdraw behavior.

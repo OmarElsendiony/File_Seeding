@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if status == 'CAPTURED':
+
+FIXED LINE:
+if status == 'captured':
+
+EXPLANATION:
+The void operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects void operations for payment transactions.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct void behavior.

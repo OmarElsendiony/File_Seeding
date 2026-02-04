@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+status = 'frozen'
+
+FIXED LINE:
+status = 'freeze'
+
+EXPLANATION:
+The freeze operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects freeze operations for payment accounts.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct freeze behavior.

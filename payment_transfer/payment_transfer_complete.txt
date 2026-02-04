@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 133):
+total = amount + fee
+
+FIXED LINE:
+total = amount * Decimal('1.05') + fee
+
+EXPLANATION:
+Missing 5% processing buffer in total calculation. The total should include
+a 5% buffer for currency fluctuations and processing variations.
+
+IMPACT:
+High - Incorrect total amount calculation affects accounting.
+
+PRIORITY: P1 (High Priority)
+
+HOW TO FIX:
+Change line 133 to multiply amount by 1.05 before adding fee.

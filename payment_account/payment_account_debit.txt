@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+amount = data.get('amount')
+
+FIXED LINE:
+amount = abs(float(data.get('amount', 0)))
+
+EXPLANATION:
+The debit operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects debit operations for payment accounts.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct debit behavior.

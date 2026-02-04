@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if account_id is None:
+
+FIXED LINE:
+if account_id is not None:
+
+EXPLANATION:
+The link operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects link operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct link behavior.

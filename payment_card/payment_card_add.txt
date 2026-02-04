@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 187):
+if card_number is None:
+
+FIXED LINE:
+if card_number is not None:
+
+EXPLANATION:
+The validation logic is inverted. The code should return an error when card_number 
+IS None (missing), but currently it returns an error when card_number is NOT None.
+
+IMPACT:
+Critical - Prevents ALL legitimate card additions from succeeding.
+
+PRIORITY: P1 (High Priority)
+
+HOW TO FIX:
+Change line 187 from "if card_number is None:" to "if card_number is not None:"

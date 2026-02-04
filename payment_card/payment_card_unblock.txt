@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+MAX_UNBLOCK_ATTEMPTS = 3
+
+FIXED LINE:
+MAX_UNBLOCK_ATTEMPTS = 5
+
+EXPLANATION:
+The unblock operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects unblock operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct unblock behavior.

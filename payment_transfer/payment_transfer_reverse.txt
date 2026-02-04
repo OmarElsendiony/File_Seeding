@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+SELECT * WHERE txn_id = ?
+
+FIXED LINE:
+SELECT * WHERE transfer_id = ?
+
+EXPLANATION:
+The reverse operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects reverse operations for payment transfers.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct reverse behavior.

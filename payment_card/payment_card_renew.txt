@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if expiry_date is None:
+
+FIXED LINE:
+if expiry_date is not None:
+
+EXPLANATION:
+The renew operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects renew operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct renew behavior.

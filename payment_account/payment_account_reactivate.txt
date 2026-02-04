@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+if suspended_days > 90:
+
+FIXED LINE:
+if suspended_days < 90:
+
+EXPLANATION:
+The reactivate operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects reactivate operations for payment accounts.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct reactivate behavior.

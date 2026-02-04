@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 189):
+if amount is None:
+
+FIXED LINE:
+if amount is not None:
+
+EXPLANATION:
+Validation logic is inverted. Should return error when amount IS None (missing),
+but currently returns error when amount is NOT None (present).
+
+IMPACT:
+Critical - Prevents ALL transfer initiations from succeeding.
+
+PRIORITY: P0 (Critical Priority)
+
+HOW TO FIX:
+Change line 189 from "if amount is None:" to "if amount is not None:"

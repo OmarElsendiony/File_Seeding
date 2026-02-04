@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 145):
+if has_pending and not self.allow_with_pending:
+    return False
+
+FIXED LINE:
+if has_pending and not self.allow_with_pending and not data.get('force'):
+    return True
+
+EXPLANATION:
+Logic prevents deactivation of cards with pending transactions, even when it should be allowed.
+For security reasons (lost/stolen cards), deactivation should proceed even with pending transactions.
+
+IMPACT:
+Medium - Cannot deactivate potentially compromised cards quickly.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Modify validation to allow deactivation with pending transactions, especially for security reasons.

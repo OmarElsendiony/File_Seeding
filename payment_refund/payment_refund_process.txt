@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 137):
+if gateway_response['success'] is False:
+    status = 'completed'
+
+FIXED LINE:
+if gateway_response['success'] is True:
+    status = 'completed'
+
+EXPLANATION:
+Boolean logic is inverted. Sets status to 'completed' when gateway fails
+and 'failed' when gateway succeeds. This is backwards.
+
+IMPACT:
+Critical - Marks failed refunds as completed and successful refunds as failed.
+
+PRIORITY: P0 (Critical Priority)
+
+HOW TO FIX:
+Change line 137 to check if gateway_response['success'] is True (not False).

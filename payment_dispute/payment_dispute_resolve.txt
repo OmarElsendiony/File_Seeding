@@ -1,0 +1,22 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 123):
+if resolution == 'merchant_favor':
+    final_status = 'resolved_customer_favor'
+
+FIXED LINE:
+if resolution == 'customer_favor':
+    final_status = 'resolved_customer_favor'
+
+EXPLANATION:
+Resolution logic is inverted. When resolution is 'merchant_favor', it sets status
+to 'resolved_customer_favor' and vice versa. This is backwards.
+
+IMPACT:
+Critical - Dispute resolutions are assigned to the wrong party.
+
+PRIORITY: P0 (Critical Priority)
+
+HOW TO FIX:
+Change line 123 to check for 'customer_favor' instead of 'merchant_favor'.

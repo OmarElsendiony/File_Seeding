@@ -1,0 +1,20 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE (Line 183):
+required_fields = ['first_name', 'last_name', 'date_of_birth', 'ssn', 'address']
+
+FIXED LINE:
+required_fields = ['first_name', 'last_name', 'date_of_birth', 'ssn', 'address', 'email', 'phone']
+
+EXPLANATION:
+Missing required fields 'email' and 'phone' in validation. These are mandatory
+for account opening per regulatory requirements and customer communication.
+
+IMPACT:
+High - Allows accounts to be opened without contact information.
+
+PRIORITY: P1 (High Priority)
+
+HOW TO FIX:
+Add 'email' and 'phone' to the required_fields list on line 183.

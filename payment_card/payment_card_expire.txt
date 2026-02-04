@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+query = "UPDATE cards SET status = 'expired' WHERE id = ?"
+
+FIXED LINE:
+query = "UPDATE cards SET status = 'expired' WHERE card_id = ?"
+
+EXPLANATION:
+The expire operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects expire operations for payment cards.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct expire behavior.

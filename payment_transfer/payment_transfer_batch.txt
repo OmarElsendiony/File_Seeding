@@ -1,0 +1,19 @@
+BUG DESCRIPTION
+===============
+
+BUGGY LINE:
+except ValueError:
+
+FIXED LINE:
+except KeyError:
+
+EXPLANATION:
+The batch operation has incorrect logic/configuration that affects functionality.
+
+IMPACT:
+Medium - Affects batch operations for payment transfers.
+
+PRIORITY: P2 (Medium Priority)
+
+HOW TO FIX:
+Update the buggy line to the fixed version to correct batch behavior.
