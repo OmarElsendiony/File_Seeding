@@ -1,0 +1,800 @@
+{
+  "logistics_shipping_service": {
+    "tracking": {
+      "files": [
+        "tracking_update_location.py",
+        "tracking_calculate_eta.py",
+        "tracking_check_geofence.py",
+        "tracking_validate_coordinates.py",
+        "tracking_calculate_speed.py"
+      ]
+    },
+    "warehouse": {
+      "files": [
+        "warehouse_calculate_capacity.py",
+        "warehouse_validate_storage.py",
+        "warehouse_release.py",
+        "warehouse_optimize_layout.py",
+        "warehouse_calculate_storage_cost.py",
+        "warehouse_calculate_throughput.py",
+        "warehouse_calculate_utilization.py",
+        "warehouse_transfer_inventory.py",
+        "warehouse_reserve_space.py",
+        "warehouse_assign_location.py",
+        "warehouse_check_availability.py",
+        "warehouse_allocate.py"
+      ]
+    },
+    "route": {
+      "files": [
+        "route_add_waypoint.py",
+        "route_find_shortest.py",
+        "route_optimize.py",
+        "route_estimate_cost.py",
+        "route_calculate.py",
+        "route_calculate_fuel.py",
+        "route_remove_waypoint.py",
+        "route_calculate_toll.py",
+        "route_alternative.py",
+        "route_validate.py",
+        "route_check_restrictions.py",
+        "route_calculate_eta.py"
+      ]
+    },
+    "carrier": {
+      "files": [
+        "carrier_update_status.py",
+        "carrier_track_vehicle.py",
+        "carrier_assign.py",
+        "carrier_rate.py",
+        "carrier_performance.py",
+        "carrier_validate.py",
+        "carrier_select.py",
+        "carrier_calculate_capacity.py",
+        "carrier_optimize_route.py",
+        "carrier_assign_route.py",
+        "carrier_calculate_cost.py",
+        "carrier_allocate.py"
+      ]
+    },
+    "delivery": {
+      "files": [
+        "delivery_assign_driver.py",
+        "delivery_calculate_window.py",
+        "delivery_check_capacity.py",
+        "delivery_estimate_time.py",
+        "delivery_update_status.py",
+        "delivery_schedule.py",
+        "delivery_optimize_sequence.py",
+        "delivery_calculate_fee.py",
+        "delivery_confirm_delivery.py",
+        "delivery_verify_address.py",
+        "delivery_calculate_distance.py",
+        "delivery_calculate_priority.py"
+      ]
+    },
+    "shipment": {
+      "files": [
+        "shipment_track.py",
+        "shipment_split.py",
+        "shipment_reschedule.py",
+        "shipment_update.py",
+        "shipment_create.py",
+        "shipment_hold.py",
+        "shipment_validate.py",
+        "shipment_return_to_sender.py",
+        "shipment_merge.py",
+        "shipment_deliver.py",
+        "shipment_release.py",
+        "shipment_cancel.py"
+      ]
+    }
+  },
+  "notification_communication_service": {
+    "sms": {
+      "files": [
+        "sms_link_shortening.py",
+        "sms_opt_out.py",
+        "sms_templates.py",
+        "sms_two_factor.py",
+        "sms_retry_logic.py",
+        "sms_character_encoding.py",
+        "sms_validation.py",
+        "sms_rate_limiting.py",
+        "sms_delivery_status.py",
+        "sms_compliance.py",
+        "sms_bulk_send.py",
+        "sms_analytics.py",
+        "sms_scheduling.py",
+        "send_sms.py",
+        "sms_personalization.py"
+      ]
+    },
+    "email": {
+      "files": [
+        "email_personalization.py",
+        "email_unsubscribe.py",
+        "email_attachments.py",
+        "email_bounce_handling.py",
+        "email_queue.py",
+        "send_email.py",
+        "email_throttling.py",
+        "email_deliverability.py",
+        "email_tracking.py",
+        "email_ab_testing.py",
+        "email_scheduling.py",
+        "email_templates.py",
+        "email_reputation.py",
+        "email_validation.py",
+        "email_segmentation.py"
+      ]
+    },
+    "push": {
+      "files": [
+        "push_notification_targeting.py",
+        "push_notification_images.py",
+        "push_notification_analytics.py",
+        "push_notification_sound.py",
+        "push_notification_rate_limiting.py",
+        "push_notification_actions.py",
+        "push_notification_deep_linking.py",
+        "push_notification_localization.py",
+        "push_notification_scheduling.py",
+        "send_push_notification.py",
+        "push_notification_badges.py",
+        "push_notification_ab_testing.py",
+        "push_notification_personalization.py",
+        "push_notification_segmentation.py",
+        "push_notification_priority.py"
+      ]
+    },
+    "webhook": {
+      "files": [
+        "send_webhook.py",
+        "webhook_retry.py",
+        "webhook_analytics.py",
+        "webhook_event_filtering.py",
+        "webhook_rate_limiting.py",
+        "webhook_validation.py",
+        "webhook_delivery_tracking.py",
+        "webhook_batch_processing.py",
+        "webhook_circuit_breaker.py",
+        "webhook_payload_transformation.py"
+      ]
+    },
+    "inapp": {
+      "files": [
+        "show_inapp_message.py",
+        "inapp_message_frequency.py",
+        "inapp_message_lifecycle.py",
+        "inapp_message_ab_testing.py",
+        "inapp_message_targeting.py",
+        "inapp_message_priority_queue.py",
+        "inapp_message_triggers.py",
+        "inapp_message_conversion.py",
+        "inapp_message_personalization.py",
+        "inapp_message_analytics.py"
+      ]
+    }
+  },
+  "payment_billing_service": {
+    "invoice": {
+      "files": [
+        "invoice_send.py",
+        "invoice_generate.py",
+        "invoice_debit.py",
+        "invoice_remind.py",
+        "invoice_pay.py",
+        "invoice_calculate_late_fee.py",
+        "invoice_consolidate.py",
+        "invoice_validate.py",
+        "invoice_void.py",
+        "invoice_credit.py",
+        "invoice_partial_payment.py",
+        "invoice_overdue.py"
+      ]
+    },
+    "subscription": {
+      "files": [
+        "subscription_calculate_usage.py",
+        "subscription_create.py",
+        "subscription_pause.py",
+        "subscription_cancel.py",
+        "subscription_calculate_proration.py",
+        "subscription_apply_discount.py",
+        "subscription_trial.py",
+        "subscription_downgrade.py",
+        "subscription_upgrade.py",
+        "subscription_validate.py",
+        "subscription_resume.py",
+        "subscription_renew.py"
+      ]
+    },
+    "billing": {
+      "files": [
+        "billing_calculate_balance.py",
+        "billing_apply_tax.py",
+        "billing_prorate.py",
+        "billing_apply_adjustment.py",
+        "billing_calculate_interest.py",
+        "billing_calculate_cycle.py",
+        "billing_generate_statement.py",
+        "billing_validate_charges.py",
+        "billing_calculate_total.py",
+        "billing_calculate_average.py",
+        "billing_apply_credit.py",
+        "billing_calculate_minimum.py"
+      ]
+    },
+    "payment": {
+      "files": [
+        "payment_void.py",
+        "payment_refund.py",
+        "payment_dispute.py",
+        "payment_capture.py",
+        "payment_verify.py",
+        "payment_authorize.py",
+        "payment_split.py",
+        "payment_settle.py",
+        "payment_process.py",
+        "payment_retry.py",
+        "payment_schedule.py",
+        "payment_reconcile.py"
+      ]
+    },
+    "transaction": {
+      "files": [
+        "transaction_calculate_fee.py",
+        "transaction_validate.py",
+        "transaction_flag.py",
+        "transaction_audit.py",
+        "transaction_approve.py",
+        "transaction_categorize.py",
+        "transaction_record.py",
+        "transaction_reconcile.py",
+        "transaction_batch.py",
+        "transaction_settle.py",
+        "transaction_export.py",
+        "transaction_reverse.py"
+      ]
+    }
+  },
+  "search_discovery_service": {
+    "recommendation": {
+      "files": [
+        "contextual_recommend.py",
+        "multi_armed_bandit.py",
+        "rerank_results.py",
+        "explore_exploit.py",
+        "explain_recommendation.py",
+        "content_based.py",
+        "real_time_personalization.py",
+        "ab_test_recommendations.py",
+        "diversity_boost.py",
+        "collaborative_filtering.py",
+        "session_based.py",
+        "hybrid_recommend.py",
+        "cold_start.py",
+        "matrix_factorization.py",
+        "trending_items.py"
+      ]
+    },
+    "query": {
+      "files": [
+        "detect_intent.py",
+        "validate_query.py",
+        "extract_filters.py",
+        "rewrite_query.py",
+        "normalize_query.py",
+        "optimize_query.py",
+        "suggest_query.py",
+        "parse_query.py",
+        "calculate_query_cost.py",
+        "expand_query.py"
+      ]
+    },
+    "indexing": {
+      "files": [
+        "rank_by_freshness.py",
+        "extract_keywords.py",
+        "create_ngrams.py",
+        "build_inverted_index.py",
+        "pagerank.py",
+        "calculate_document_similarity.py",
+        "optimize_index.py",
+        "calculate_authority.py",
+        "cluster_documents.py",
+        "bm25_ranking.py",
+        "build_suffix_tree.py",
+        "build_knowledge_graph.py",
+        "calculate_tf_idf.py",
+        "detect_duplicates.py",
+        "build_bloom_filter.py"
+      ]
+    },
+    "search": {
+      "files": [
+        "filter_search.py",
+        "range_search.py",
+        "sort_results.py",
+        "text_search.py",
+        "trending_searches.py",
+        "suggest_corrections.py",
+        "autocomplete.py",
+        "personalize_search.py",
+        "geo_search.py",
+        "phrase_search.py",
+        "wildcard_search.py",
+        "boolean_search.py",
+        "semantic_search.py",
+        "highlight_matches.py",
+        "proximity_search.py",
+        "faceted_search.py",
+        "search_history.py",
+        "paginate_results.py",
+        "cache_results.py",
+        "fuzzy_search.py"
+      ]
+    }
+  },
+  "analytics_reporting_service": {
+    "product": {
+      "files": [
+        "product_seasonality.py",
+        "product_cross_sell.py",
+        "product_profitability.py",
+        "product_reviews.py",
+        "product_substitution.py",
+        "product_cannibalization.py",
+        "product_adoption.py",
+        "inventory_turnover.py",
+        "product_recommendations.py",
+        "product_bundling.py",
+        "product_performance.py",
+        "product_pricing.py",
+        "product_lifecycle.py",
+        "product_mix.py",
+        "product_returns.py"
+      ]
+    },
+    "operational": {
+      "files": [
+        "performance_dashboard.py",
+        "capacity_utilization.py",
+        "downtime_analysis.py",
+        "bottleneck_detection.py",
+        "efficiency_metrics.py",
+        "lead_time_analysis.py",
+        "quality_metrics.py",
+        "resource_utilization.py",
+        "cycle_time.py",
+        "throughput_analysis.py"
+      ]
+    },
+    "financial": {
+      "files": [
+        "revenue_forecast.py",
+        "working_capital.py",
+        "profit_margins.py",
+        "tax_calculation.py",
+        "financial_ratios.py",
+        "cost_analysis.py",
+        "financial_health.py",
+        "depreciation.py",
+        "cash_flow.py",
+        "revenue_breakdown.py",
+        "burn_rate.py",
+        "expense_tracking.py",
+        "budget_variance.py",
+        "roi_analysis.py",
+        "break_even.py"
+      ]
+    },
+    "customer": {
+      "files": [
+        "customer_satisfaction.py",
+        "customer_complaints.py",
+        "customer_acquisition.py",
+        "engagement_score.py",
+        "support_tickets.py",
+        "referral_tracking.py",
+        "customer_loyalty.py",
+        "retention_rate.py",
+        "upsell_opportunities.py",
+        "customer_preferences.py",
+        "customer_feedback.py",
+        "customer_health.py",
+        "customer_journey.py",
+        "customer_segments.py",
+        "customer_demographics.py"
+      ]
+    },
+    "sales_analytics": {
+      "files": [
+        "cohort_analysis.py",
+        "segmentation_analysis.py",
+        "sales_forecasting.py",
+        "sales_velocity.py",
+        "funnel_analysis.py",
+        "revenue_analysis.py",
+        "quota_attainment.py",
+        "trend_detection.py",
+        "win_loss_analysis.py",
+        "churn_prediction.py",
+        "pipeline_health.py",
+        "basket_analysis.py",
+        "price_elasticity.py",
+        "lifetime_value.py",
+        "attribution_modeling.py"
+      ]
+    }
+  },
+  "security_compliance_service": {
+    "authentication": {
+      "files": [
+        "two_factor_auth.py",
+        "jwt_tokens.py",
+        "biometric_auth.py",
+        "api_key_auth.py",
+        "oauth2_flow.py",
+        "password_strength.py",
+        "session_management.py",
+        "login_attempts.py",
+        "single_sign_on.py",
+        "password_hashing.py"
+      ]
+    },
+    "encryption": {
+      "files": [
+        "key_rotation.py",
+        "homomorphic_encryption.py",
+        "end_to_end_encryption.py",
+        "aes_encryption.py",
+        "tls_configuration.py",
+        "rsa_encryption.py",
+        "hash_functions.py",
+        "secure_random.py",
+        "data_at_rest.py",
+        "certificate_validation.py"
+      ]
+    },
+    "authorization": {
+      "files": [
+        "geo_restriction.py",
+        "role_based_access.py",
+        "attribute_based_access.py",
+        "permission_hierarchy.py",
+        "scope_validation.py",
+        "ip_whitelist.py",
+        "delegation_authorization.py",
+        "resource_ownership.py",
+        "rate_limit_authorization.py",
+        "time_based_access.py"
+      ]
+    }
+  },
+  "inventory_warehouse_service": {
+    "inventory": {
+      "files": [
+        "eoq_calculation.py",
+        "abc_analysis.py",
+        "add_stock.py",
+        "reorder_point.py",
+        "release_reserved.py",
+        "remove_stock.py",
+        "expiry_tracking.py",
+        "transfer_stock.py",
+        "adjust_stock.py",
+        "safety_stock.py",
+        "count_stock.py",
+        "turnover_rate.py",
+        "carrying_cost.py",
+        "reserve_stock.py",
+        "batch_tracking.py"
+      ]
+    },
+    "warehouse": {
+      "files": [
+        "dock_scheduling.py",
+        "wave_picking.py",
+        "zone_picking.py",
+        "labor_scheduling.py",
+        "putaway_strategy.py",
+        "kitting_assembly.py",
+        "replenishment.py",
+        "slotting_optimization.py",
+        "cycle_counting.py",
+        "damage_assessment.py",
+        "returns_processing.py",
+        "cross_docking.py",
+        "optimize_layout.py",
+        "pick_path_optimization.py",
+        "allocate_space.py"
+      ]
+    },
+    "supply": {
+      "files": [
+        "capacity_planning.py",
+        "procurement_optimization.py",
+        "customs_clearance.py",
+        "last_mile_delivery.py",
+        "consignment_inventory.py",
+        "green_logistics.py",
+        "route_optimization.py",
+        "predictive_maintenance.py",
+        "inventory_optimization.py",
+        "backorder_management.py",
+        "supplier_selection.py",
+        "lead_time_analysis.py",
+        "freight_consolidation.py",
+        "demand_forecasting.py",
+        "supplier_performance.py",
+        "vendor_managed_inventory.py",
+        "stockout_prevention.py",
+        "risk_assessment.py",
+        "reverse_logistics.py",
+        "distribution_network.py",
+        "bullwhip_effect.py",
+        "cold_chain_monitoring.py",
+        "order_batching.py",
+        "contract_compliance.py",
+        "transportation_mode.py"
+      ]
+    }
+  },
+  "integration_api_service": {
+    "data_sync": {
+      "files": [
+        "sync_bandwidth_throttling.py",
+        "sync_compression.py",
+        "sync_priority_queue.py",
+        "sync_conflict_resolution.py",
+        "sync_batch_processing.py",
+        "sync_analytics.py",
+        "sync_delta_calculation.py",
+        "sync_status.py",
+        "sync_retry_logic.py",
+        "sync_validation.py"
+      ]
+    },
+    "webhooks": {
+      "files": [
+        "webhook_filtering.py",
+        "webhook_verification.py",
+        "webhook_analytics.py",
+        "webhook_delivery.py",
+        "webhook_registration.py",
+        "webhook_payload.py",
+        "webhook_batching.py",
+        "webhook_rate_limiting.py",
+        "webhook_circuit_breaker.py",
+        "webhook_retry_strategy.py"
+      ]
+    },
+    "graphql": {
+      "files": [
+        "graphql_field_selection.py",
+        "graphql_query.py",
+        "graphql_introspection.py",
+        "graphql_mutations.py",
+        "graphql_schema.py",
+        "graphql_resolver.py",
+        "graphql_batching.py",
+        "graphql_caching.py",
+        "graphql_depth_limiting.py",
+        "graphql_subscriptions.py"
+      ]
+    },
+    "third_party": {
+      "files": [
+        "mailchimp_integration.py",
+        "firebase_integration.py",
+        "zendesk_integration.py",
+        "oauth_token_exchange.py",
+        "oauth_flow.py",
+        "stripe_integration.py",
+        "sendgrid_integration.py",
+        "oauth_token_refresh.py",
+        "aws_s3_integration.py",
+        "api_key_management.py",
+        "google_analytics.py",
+        "github_integration.py",
+        "slack_integration.py",
+        "api_key_rotation.py",
+        "twilio_integration.py"
+      ]
+    },
+    "rest_api": {
+      "files": [
+        "api_caching.py",
+        "api_response.py",
+        "authentication.py",
+        "api_throttling.py",
+        "api_documentation.py",
+        "api_versioning.py",
+        "api_validation.py",
+        "api_security.py",
+        "api_request.py",
+        "rate_limiting.py",
+        "api_monitoring.py",
+        "api_filtering.py",
+        "api_error_handling.py",
+        "pagination.py",
+        "api_sorting.py"
+      ]
+    }
+  },
+  "order_management_service": {
+    "inventory": {
+      "files": [
+        "inventory_turnover.py",
+        "inventory_allocation.py",
+        "inventory_optimization.py",
+        "inventory_transfer.py",
+        "inventory_shrinkage.py",
+        "inventory_backorder.py",
+        "inventory_abc_analysis.py",
+        "inventory_reservation.py",
+        "inventory_reorder_point.py",
+        "inventory_cycle_count.py"
+      ]
+    },
+    "order_processing": {
+      "files": [
+        "order_merging.py",
+        "order_creation.py",
+        "order_forecasting.py",
+        "order_validation.py",
+        "order_quality_check.py",
+        "order_status.py",
+        "order_routing.py",
+        "order_duplicate_detection.py",
+        "order_cancellation.py",
+        "order_splitting.py",
+        "order_batch_processing.py",
+        "order_scheduling.py",
+        "order_priority.py",
+        "order_aggregation.py",
+        "order_modification.py"
+      ]
+    },
+    "payment": {
+      "files": [
+        "payment_subscription.py",
+        "payment_refund.py",
+        "payment_tokenization.py",
+        "payment_capture.py",
+        "payment_gateway_selection.py",
+        "payment_reconciliation.py",
+        "payment_fraud_detection.py",
+        "payment_split.py",
+        "payment_currency_conversion.py",
+        "payment_installments.py",
+        "payment_retry.py",
+        "payment_analytics.py",
+        "payment_escrow.py",
+        "payment_authorization.py",
+        "payment_chargeback.py"
+      ]
+    },
+    "customer_service": {
+      "files": [
+        "escalation_management.py",
+        "customer_satisfaction_score.py",
+        "customer_lifetime_value.py",
+        "customer_communication_log.py",
+        "order_inquiry_response.py",
+        "support_ticket_routing.py",
+        "feedback_collection.py",
+        "complaint_handling.py",
+        "automated_response.py",
+        "service_level_agreement.py"
+      ]
+    },
+    "shipping": {
+      "files": [
+        "shipping_consolidation.py",
+        "shipping_packaging_selection.py",
+        "shipping_insurance.py",
+        "shipping_zone_calculation.py",
+        "shipping_label_generation.py",
+        "shipping_performance_metrics.py",
+        "shipping_route_optimization.py",
+        "shipping_tracking.py",
+        "shipping_carrier_selection.py",
+        "shipping_delivery_window.py",
+        "shipping_customs_declaration.py",
+        "shipping_address_validation.py",
+        "shipping_hazmat_handling.py",
+        "shipping_returns_processing.py",
+        "shipping_cost_calculation.py"
+      ]
+    }
+  },
+  "card_management_service": {
+    "payment_account": {
+      "files": [
+        "payment_account_balance.py",
+        "payment_account_statement.py",
+        "payment_account_reactivate.py",
+        "payment_account_limit.py",
+        "payment_account_unfreeze.py",
+        "payment_account_verify.py",
+        "payment_account_suspend.py",
+        "payment_account_debit.py",
+        "payment_account_update.py",
+        "payment_account_open.py",
+        "payment_account_freeze.py",
+        "payment_account_close.py",
+        "payment_account_credit.py"
+      ]
+    },
+    "payment_refund": {
+      "files": [
+        "payment_refund_track.py",
+        "payment_refund_cancel.py",
+        "payment_refund_complete.py",
+        "payment_refund_reject.py",
+        "payment_refund_validate.py",
+        "payment_refund_approve.py",
+        "payment_refund_initiate.py",
+        "payment_refund_process.py"
+      ]
+    },
+    "payment_transaction": {
+      "files": [
+        "payment_transaction_verify.py",
+        "payment_transaction_reconcile.py",
+        "payment_transaction_authorize.py",
+        "payment_transaction_capture.py",
+        "payment_transaction_void.py",
+        "payment_transaction_settle.py"
+      ]
+    },
+    "payment_dispute": {
+      "files": [
+        "payment_dispute_create.py",
+        "payment_dispute_update.py",
+        "payment_dispute_resolve.py",
+        "payment_dispute_respond.py",
+        "payment_dispute_escalate.py",
+        "payment_dispute_withdraw.py"
+      ]
+    },
+    "payment_card": {
+      "files": [
+        "payment_card_remove.py",
+        "payment_card_deactivate.py",
+        "payment_card_update_pin.py",
+        "payment_card_verify_cvv.py",
+        "payment_card_update.py",
+        "payment_card_renew.py",
+        "payment_card_create.py",
+        "payment_card_validate.py",
+        "payment_card_add.py",
+        "payment_card_unblock.py",
+        "payment_card_link.py",
+        "payment_card_block.py",
+        "payment_card_expire.py",
+        "payment_card_activate.py",
+        "payment_card_unlink.py"
+      ]
+    },
+    "payment_transfer": {
+      "files": [
+        "payment_transfer_validate.py",
+        "payment_transfer_retry.py",
+        "payment_transfer_hold.py",
+        "payment_transfer_complete.py",
+        "payment_transfer_verify.py",
+        "payment_transfer_reverse.py",
+        "payment_transfer_approve.py",
+        "payment_transfer_batch.py",
+        "payment_transfer_cancel.py",
+        "payment_transfer_reject.py",
+        "payment_transfer_initiate.py",
+        "payment_transfer_schedule.py"
+      ]
+    }
+  }
+}
